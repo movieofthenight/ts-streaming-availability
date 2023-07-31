@@ -122,11 +122,11 @@ const client = new streamingAvailability.DefaultApi(new streamingAvailability.Co
 ### Get The Dark Knight's Streaming Info (Node/ES Modules)
 
 ```js
-import StreamingAvailability from "streaming-availability"
+import streamingAvailability from "streaming-availability"
 
 const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
 
-const client = new StreamingAvailability.DefaultApi(new StreamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
+const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
 
 const country = "us"; // Update with other country codes as you want, we support 58 countries!
 
