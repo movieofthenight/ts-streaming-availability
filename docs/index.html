@@ -1,0 +1,771 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>streaming-availability</title><meta name="description" content="Documentation for streaming-availability"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/search.js" id="tsd-search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">streaming-availability</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h2>streaming-availability</h2></div>
+<div class="tsd-panel tsd-typography"><a id="md:streaming-availability-api-typescript-client" class="tsd-anchor"></a><h1><a href="#md:streaming-availability-api-typescript-client">Streaming Availability API TypeScript Client</a></h1><p><a href="https://www.npmjs.com/package/streaming-availability"><img src="https://img.shields.io/npm/v/streaming-availability?style=flat-square&logo=npm&color=blue" alt="npm"></a>
+<a href="https://movieofthenight.github.io/ts-streaming-availability/"><img src="https://img.shields.io/badge/tsdoc-reference-blue?style=flat-square" alt="tsdoc"></a></p>
+<p>This client can be used in both JavaScript and TypeScript projects; and both in browser and Node environment.</p>
+<a id="md:streaming-availability-api" class="tsd-anchor"></a><h2><a href="#md:streaming-availability-api">Streaming Availability API</a></h2><p>Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 58 countries!</p>
+<a id="md:api-key" class="tsd-anchor"></a><h3><a href="#md:api-key">API Key</a></h3><p>To get an instant free subscription to start using the API, you can visit
+<a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/pricing">the RapidAPI page of the API</a>.</p>
+<p>With a free subscription, you can send 100 requests per day.
+To send more requests, you can upgrade to paid plans whenever you like.</p>
+<a id="md:useful-links" class="tsd-anchor"></a><h3><a href="#md:useful-links">Useful Links</a></h3><ul>
+<li><p><a href="https://www.movieofthenight.com/about/api">Official Webpage of the API</a></p>
+</li>
+<li><p><a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/pricing">Subscription Page on RapidAPI</a></p>
+</li>
+<li><p><a href="https://www.movieofthenight.com/about/api/documentation">Full Documentation of All Available Endpoints</a></p>
+</li>
+<li><p><a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/">Home Page of the API on RapidAPI</a></p>
+</li>
+<li><p><a href="https://github.com/movieofthenight/streaming-availability-api">Main GitHub Repository of the API</a></p>
+</li>
+</ul>
+<a id="md:features" class="tsd-anchor"></a><h3><a href="#md:features">Features</a></h3><ul>
+<li>Query streaming availability info of the movies and series via their TMDb or IMDd ids.</li>
+<li>Search for movies and series via their titles, genres, keywords, release years on
+specific streaming services (e.g.: Get all the zombie action movies available
+on Netflix and Disney+)</li>
+<li>Returned streaming availability info includes:<ul>
+<li>Deep links into the streaming services for
+movies, series, seasons and episodes.</li>
+<li>Available video qualities (eg. SD, HD, UHD).</li>
+<li>Available subtitles and audios.</li>
+<li>First detection time of the shows on the streaming services.</li>
+<li>Expiry date of the shows/seasons/episodes on the streaming services.</li>
+<li>All the available options to stream a show
+(e.g. via subscription, to buy/rent, for free, available via an addons)</li>
+<li>Price and currency information for buyable/rentable shows</li>
+</ul>
+</li>
+<li>Channel and addon support (e.g. Apple TV Channels, Hulu Addons, Prime Video Channels)</li>
+<li>Output also includes TMDB and IMDb ids for every show.</li>
+</ul>
+<a id="md:install" class="tsd-anchor"></a><h2><a href="#md:install">Install</a></h2><a id="md:node" class="tsd-anchor"></a><h3><a href="#md:node">Node</a></h3><pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> </span><span class="hl-0">streaming</span><span class="hl-1">-</span><span class="hl-0">availability</span>
+</code><button>Copy</button></pre>
+<blockquote>
+<p>Requires Node version <code>18.0.0</code> or higher.</p>
+</blockquote>
+<a id="md:browser" class="tsd-anchor"></a><h3><a href="#md:browser">Browser</a></h3><pre><code class="language-html"><span class="hl-2">&lt;</span><span class="hl-3">script</span><span class="hl-4"> </span><span class="hl-5">src</span><span class="hl-4">=</span><span class="hl-6">&quot;https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.4/bundle.js&quot;</span><span class="hl-2">&gt;&lt;/</span><span class="hl-3">script</span><span class="hl-2">&gt;</span>
+</code><button>Copy</button></pre>
+<p>This script creates a global variable at <code>window.streamingAvailability</code>
+where you can access to the module.</p>
+<blockquote>
+<p>Warning: As it would expose your API key to visitors of the page,
+use this option only for private personal projects, or proof-of-concept works.</p>
+<p>Do not use it for any public projects.</p>
+</blockquote>
+<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><a id="md:node-es-modules" class="tsd-anchor"></a><h3><a href="#md:node-es-modules">Node (ES modules)</a></h3><pre><code class="language-js"><span class="hl-7">import</span><span class="hl-1"> </span><span class="hl-0">streamingAvailability</span><span class="hl-1"> </span><span class="hl-7">from</span><span class="hl-1"> </span><span class="hl-8">&quot;streaming-availability&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-1"> = </span><span class="hl-8">&quot;PUT_YOUR_RAPIDAPI_KEY_HERE&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">client</span><span class="hl-1"> = </span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">streamingAvailability</span><span class="hl-1">.</span><span class="hl-11">DefaultApi</span><span class="hl-1">(</span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">streamingAvailability</span><span class="hl-1">.</span><span class="hl-11">Configuration</span><span class="hl-1">({</span><span class="hl-0">apiKey:</span><span class="hl-1"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-1">}));</span><br/><span class="hl-12">// Start using the client</span>
+</code><button>Copy</button></pre>
+<a id="md:node-commonjs" class="tsd-anchor"></a><h3><a href="#md:node-commonjs">Node (CommonJS)</a></h3><pre><code class="language-js"><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">streamingAvailability</span><span class="hl-1"> = </span><span class="hl-11">require</span><span class="hl-1">(</span><span class="hl-8">&quot;streaming-availability&quot;</span><span class="hl-1">);</span><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-1"> = </span><span class="hl-8">&quot;PUT_YOUR_RAPIDAPI_KEY_HERE&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">client</span><span class="hl-1"> = </span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">streamingAvailability</span><span class="hl-1">.</span><span class="hl-11">DefaultApi</span><span class="hl-1">(</span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">streamingAvailability</span><span class="hl-1">.</span><span class="hl-11">Configuration</span><span class="hl-1">({</span><span class="hl-0">apiKey:</span><span class="hl-1"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-1">}));</span><br/><span class="hl-12">// Start using the client</span>
+</code><button>Copy</button></pre>
+<a id="md:browser-1" class="tsd-anchor"></a><h3><a href="#md:browser-1">Browser</a></h3><pre><code class="language-html"><span class="hl-2">&lt;!</span><span class="hl-3">DOCTYPE</span><span class="hl-1"> </span><span class="hl-5">html</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;</span><span class="hl-3">html</span><span class="hl-1"> </span><span class="hl-5">lang</span><span class="hl-1">=</span><span class="hl-6">&quot;en&quot;</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;</span><span class="hl-3">head</span><span class="hl-2">&gt;</span><br/><span class="hl-1">    </span><span class="hl-2">&lt;</span><span class="hl-3">title</span><span class="hl-2">&gt;</span><span class="hl-1">Streaming Availability API In Browser Example</span><span class="hl-2">&lt;/</span><span class="hl-3">title</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;/</span><span class="hl-3">head</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;</span><span class="hl-3">body</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;</span><span class="hl-3">script</span><span class="hl-4"> </span><span class="hl-5">src</span><span class="hl-4">=</span><span class="hl-6">&quot;https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.4/bundle.js&quot;</span><span class="hl-2">&gt;&lt;/</span><span class="hl-3">script</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;</span><span class="hl-3">script</span><span class="hl-2">&gt;</span><br/><span class="hl-4">    </span><span class="hl-9">const</span><span class="hl-4"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-4"> </span><span class="hl-1">=</span><span class="hl-4"> </span><span class="hl-8">&quot;PUT_YOUR_RAPIDAPI_KEY_HERE&quot;</span><span class="hl-4">;</span><br/><span class="hl-4">    </span><span class="hl-9">const</span><span class="hl-4"> </span><span class="hl-10">client</span><span class="hl-4"> </span><span class="hl-1">=</span><span class="hl-4"> </span><span class="hl-9">new</span><span class="hl-4"> </span><span class="hl-0">streamingAvailability</span><span class="hl-4">.</span><span class="hl-11">DefaultApi</span><span class="hl-4">(</span><span class="hl-9">new</span><span class="hl-4"> </span><span class="hl-0">streamingAvailability</span><span class="hl-4">.</span><span class="hl-11">Configuration</span><span class="hl-4">({</span><span class="hl-0">apiKey:</span><span class="hl-4"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-4">}));</span><br/><span class="hl-4">    </span><span class="hl-12">// Start using the client</span><br/><span class="hl-2">&lt;/</span><span class="hl-3">script</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;/</span><span class="hl-3">body</span><span class="hl-2">&gt;</span><br/><span class="hl-2">&lt;/</span><span class="hl-3">html</span><span class="hl-2">&gt;</span>
+</code><button>Copy</button></pre>
+<blockquote>
+<p>Warning: As it would expose your API key to visitors of the page,
+use this option only for private personal projects, or proof-of-concept works.</p>
+<p>Do not use it for any public projects.</p>
+</blockquote>
+<a id="md:examples" class="tsd-anchor"></a><h2><a href="#md:examples">Examples</a></h2><a id="md:get-the-dark-knight39s-streaming-info-nodees-modules" class="tsd-anchor"></a><h3><a href="#md:get-the-dark-knight39s-streaming-info-nodees-modules">Get The Dark Knight&#39;s Streaming Info (Node/ES Modules)</a></h3><pre><code class="language-js"><span class="hl-7">import</span><span class="hl-1"> </span><span class="hl-0">StreamingAvailability</span><span class="hl-1"> </span><span class="hl-7">from</span><span class="hl-1"> </span><span class="hl-8">&quot;streaming-availability&quot;</span><br/><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-1"> = </span><span class="hl-8">&quot;PUT_YOUR_RAPIDAPI_KEY_HERE&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">client</span><span class="hl-1"> = </span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">StreamingAvailability</span><span class="hl-1">.</span><span class="hl-11">DefaultApi</span><span class="hl-1">(</span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">StreamingAvailability</span><span class="hl-1">.</span><span class="hl-11">Configuration</span><span class="hl-1">({</span><span class="hl-0">apiKey:</span><span class="hl-1"> </span><span class="hl-10">RAPID_API_KEY</span><span class="hl-1">}));</span><br/><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">country</span><span class="hl-1"> = </span><span class="hl-8">&quot;us&quot;</span><span class="hl-1">; </span><span class="hl-12">// Update with other country codes as you want, we support 58 countries!</span><br/><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">imdbId</span><span class="hl-1"> = </span><span class="hl-8">&quot;tt0468569&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-0">client</span><span class="hl-1">.</span><span class="hl-11">getById</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-0">imdbId:</span><span class="hl-1"> </span><span class="hl-0">imdbId</span><span class="hl-1">,</span><br/><span class="hl-1">}).</span><span class="hl-11">then</span><span class="hl-1">(</span><span class="hl-0">response</span><span class="hl-1"> </span><span class="hl-9">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-10">result</span><span class="hl-1"> = </span><span class="hl-0">response</span><span class="hl-1">.</span><span class="hl-0">result</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-7">for</span><span class="hl-1">(</span><span class="hl-9">let</span><span class="hl-1"> </span><span class="hl-0">streamingOption</span><span class="hl-1"> </span><span class="hl-9">of</span><span class="hl-1"> </span><span class="hl-0">result</span><span class="hl-1">.</span><span class="hl-0">streamingInfo</span><span class="hl-1">[</span><span class="hl-0">country</span><span class="hl-1">]) {</span><br/><span class="hl-1">        </span><span class="hl-9">let</span><span class="hl-1"> </span><span class="hl-0">output</span><span class="hl-1"> = </span><span class="hl-8">`</span><span class="hl-9">${</span><span class="hl-0">result</span><span class="hl-4">.</span><span class="hl-0">title</span><span class="hl-9">}</span><span class="hl-8"> (</span><span class="hl-9">${</span><span class="hl-0">result</span><span class="hl-4">.</span><span class="hl-0">year</span><span class="hl-9">}</span><span class="hl-8">) is available on </span><span class="hl-9">${</span><span class="hl-0">streamingOption</span><span class="hl-4">.</span><span class="hl-0">service</span><span class="hl-9">}</span><span class="hl-8"> via </span><span class="hl-9">${</span><span class="hl-0">streamingOption</span><span class="hl-4">.</span><span class="hl-0">streamingType</span><span class="hl-9">}</span><span class="hl-8"> at link </span><span class="hl-9">${</span><span class="hl-0">streamingOption</span><span class="hl-4">.</span><span class="hl-0">link</span><span class="hl-9">}</span><span class="hl-8">`</span><span class="hl-1">;</span><br/><span class="hl-1">        </span><span class="hl-7">if</span><span class="hl-1">(</span><span class="hl-0">streamingOption</span><span class="hl-1">.</span><span class="hl-0">quality</span><span class="hl-1"> != </span><span class="hl-9">null</span><span class="hl-1">) {</span><br/><span class="hl-1">            </span><span class="hl-0">output</span><span class="hl-1"> += </span><span class="hl-8">` with </span><span class="hl-9">${</span><span class="hl-0">streamingOption</span><span class="hl-4">.</span><span class="hl-0">quality</span><span class="hl-4">.</span><span class="hl-11">toUpperCase</span><span class="hl-4">()</span><span class="hl-9">}</span><span class="hl-8"> quality`</span><span class="hl-1">;</span><br/><span class="hl-1">        }</span><br/><span class="hl-1">        </span><span class="hl-7">if</span><span class="hl-1">(</span><span class="hl-0">streamingOption</span><span class="hl-1">.</span><span class="hl-0">price</span><span class="hl-1"> != </span><span class="hl-9">null</span><span class="hl-1">) {</span><br/><span class="hl-1">            </span><span class="hl-0">output</span><span class="hl-1"> += </span><span class="hl-8">` for </span><span class="hl-9">${</span><span class="hl-0">streamingOption</span><span class="hl-4">.</span><span class="hl-0">price</span><span class="hl-4">.</span><span class="hl-0">formatted</span><span class="hl-9">}</span><span class="hl-8">`</span><span class="hl-1">;</span><br/><span class="hl-1">        }</span><br/><span class="hl-1">        </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-11">log</span><span class="hl-1">(</span><span class="hl-0">output</span><span class="hl-1">);</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">}).</span><span class="hl-11">catch</span><span class="hl-1">(</span><span class="hl-0">error</span><span class="hl-1"> </span><span class="hl-9">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-11">log</span><span class="hl-1">(</span><span class="hl-0">error</span><span class="hl-1">);</span><br/><span class="hl-1">});</span>
+</code><button>Copy</button></pre>
+<blockquote>
+<p>Checkout <a href="https://github.com/movieofthenight/ts-streaming-availability/tree/main/examples">examples</a>
+folder for the rest of the examples.</p>
+</blockquote>
+<a id="md:terms-amp-conditions-and-attribution" class="tsd-anchor"></a><h3><a href="#md:terms-amp-conditions-and-attribution">Terms &amp; Conditions and Attribution</a></h3><p>While the client libraries have MIT licenses,
+the Streaming Availability API itself has further
+<a href="https://github.com/movieofthenight/streaming-availability-api/blob/main/TERMS.md">Terms &amp; Conditions</a>.
+Make sure to read it before using the API.</p>
+<p>Notably, the API requires an attribution to itself, if the data acquired through
+is made public. You can read further about the attribution requirement on the
+<a href="https://github.com/movieofthenight/streaming-availability-api/blob/main/TERMS.md">Terms &amp; Conditions</a>
+page.</p>
+<a id="md:faq" class="tsd-anchor"></a><h2><a href="#md:faq">FAQ</a></h2><ul>
+<li><p><strong>I run into an issue. How can I get help?</strong></p>
+<ul>
+<li>If the issue is related to the API itself, please create a post
+<a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/discussions">here</a>,
+and we will help with the issue.</li>
+<li>If the issue is specific to a client library, then you can create a new issue
+on the respective repository of the library.</li>
+</ul>
+</li>
+<li><p><strong>API returned me some wrong data. What can I do?</strong></p>
+<ul>
+<li>Send us a message with details of your findings.
+You can click on the &quot;Contact&quot; button on this
+<a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/details">page</a>.
+Once we receive the message we will take a look into the problems and fix the data.</li>
+</ul>
+</li>
+<li><p><strong>I have a request to get a new streaming service supported by the API.</strong></p>
+<ul>
+<li>Send us a message by clicking on the &quot;Contact&quot; button on this
+<a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/details">page</a>,
+and we will get back to you.</li>
+</ul>
+</li>
+<li><p><strong>I need a client library in another language.</strong></p>
+<ul>
+<li>Send us a message by clicking on the &quot;Contact&quot; button on this
+<a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/details">page</a>,
+and we will get back to you.</li>
+</ul>
+</li>
+<li><p><strong>I need further details (e.g. posters, summaries, cast) about the shows. What can I do?</strong></p>
+<ul>
+<li>Streaming Availability API works very well with
+<a href="https://developer.themoviedb.org/docs">TMDB API</a>, which can provide all the other
+info (that is not related to streaming availability) you need.
+You can pass the returned <code>tmdbId</code> field to the TMDB API&#39;s
+<a href="https://developer.themoviedb.org/reference/movie-details">movie-details</a>
+or
+<a href="https://developer.themoviedb.org/reference/tv-series-details">tv-series-details</a>
+endpoints
+and get the other details of the shows.</li>
+</ul>
+</li>
+<li><p><strong>What is the difference between Streaming Availability API and TMDB API?</strong></p>
+<ul>
+<li>The Movie Database (TMDB) is a community built movie and TV database, similar to IMDb.
+Their free API provides access to their database which includes posters, summaries, cast,
+and many other details about the shows. TMDB API&#39;s own streaming availability information
+data does not include deep links or any of the other features of this API such as
+available subtitles, audios, video qualities etc. Thus Streaming Availability API
+and TMDB API work hand in hand to get you all the details of the shows.</li>
+</ul>
+</li>
+<li><p><strong>What is RapidAPI?</strong></p>
+<ul>
+<li>RapidAPI is the world&#39;s largest API marketplace. We use RapidAPI to handle the
+API subscriptions for us. You can instantly subscribe to Streaming Availability on
+RapidAPI and start using the Streaming Availability API through RapidAPI right away.</li>
+</ul>
+</li>
+</ul>
+<a id="md:client-libraries" class="tsd-anchor"></a><h2><a href="#md:client-libraries">Client Libraries</a></h2><ol>
+<li><a href="https://github.com/movieofthenight/go-streaming-availability">Go</a></li>
+<li><a href="https://github.com/movieofthenight/ts-streaming-availability">TypeScript/JavaScript</a></li>
+</ol>
+<a id="md:services-supported" class="tsd-anchor"></a><h2><a href="#md:services-supported">Services Supported</a></h2><table>
+<thead>
+<tr>
+<th>Service Id</th>
+<th>Service Name</th>
+<th>Supported Countries</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>netflix</code></td>
+<td>Netflix</td>
+<td>57 Countries</td>
+</tr>
+<tr>
+<td><code>prime</code></td>
+<td>Amazon Prime Video</td>
+<td>56 Countries</td>
+</tr>
+<tr>
+<td><code>disney</code></td>
+<td>Disney+</td>
+<td>38 Countries</td>
+</tr>
+<tr>
+<td><code>hbo</code></td>
+<td>HBO Max</td>
+<td>24 Countries</td>
+</tr>
+<tr>
+<td><code>hulu</code></td>
+<td>Hulu</td>
+<td>United States</td>
+</tr>
+<tr>
+<td><code>peacock</code></td>
+<td>Peacock</td>
+<td>United States</td>
+</tr>
+<tr>
+<td><code>paramount</code></td>
+<td>Paramount+</td>
+<td>18 Countries</td>
+</tr>
+<tr>
+<td><code>starz</code></td>
+<td>Starz</td>
+<td>United States</td>
+</tr>
+<tr>
+<td><code>showtime</code></td>
+<td>Showtime</td>
+<td>United States</td>
+</tr>
+<tr>
+<td><code>apple</code></td>
+<td>Apple TV+</td>
+<td>52 Countries</td>
+</tr>
+<tr>
+<td><code>mubi</code></td>
+<td>Mubi</td>
+<td>55 Countries</td>
+</tr>
+<tr>
+<td><code>stan</code></td>
+<td>Stan</td>
+<td>Australia</td>
+</tr>
+<tr>
+<td><code>now</code></td>
+<td>Now</td>
+<td>United Kingdom, Ireland, Italy</td>
+</tr>
+<tr>
+<td><code>crave</code></td>
+<td>Crave</td>
+<td>Canada</td>
+</tr>
+<tr>
+<td><code>all4</code></td>
+<td>All 4</td>
+<td>United Kingdom, Ireland</td>
+</tr>
+<tr>
+<td><code>iplayer</code></td>
+<td>BBC iPlayer</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td><code>britbox</code></td>
+<td>BritBox</td>
+<td>United Kingdom, United States, Canada, Australia, South Africa</td>
+</tr>
+<tr>
+<td><code>hotstar</code></td>
+<td>Hotstar</td>
+<td>India, Canada, United Kingdom, Indonesia, Singapore</td>
+</tr>
+<tr>
+<td><code>zee5</code></td>
+<td>Zee5</td>
+<td>58 Countries</td>
+</tr>
+<tr>
+<td><code>curiosity</code></td>
+<td>Curiosity Stream</td>
+<td>57 Countries</td>
+</tr>
+<tr>
+<td><code>wow</code></td>
+<td>Wow</td>
+<td>Germany</td>
+</tr>
+</tbody></table>
+<a id="md:countries-supported" class="tsd-anchor"></a><h2><a href="#md:countries-supported">Countries Supported</a></h2><table>
+<thead>
+<tr>
+<th>Country Code</th>
+<th>Country Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ae</code></td>
+<td>United Emirates</td>
+</tr>
+<tr>
+<td><code>ar</code></td>
+<td>Argentina</td>
+</tr>
+<tr>
+<td><code>at</code></td>
+<td>Austria</td>
+</tr>
+<tr>
+<td><code>au</code></td>
+<td>Australia</td>
+</tr>
+<tr>
+<td><code>az</code></td>
+<td>Azerbaijan</td>
+</tr>
+<tr>
+<td><code>be</code></td>
+<td>Belgium</td>
+</tr>
+<tr>
+<td><code>bg</code></td>
+<td>Bulgaria</td>
+</tr>
+<tr>
+<td><code>br</code></td>
+<td>Brazil</td>
+</tr>
+<tr>
+<td><code>ca</code></td>
+<td>Canada</td>
+</tr>
+<tr>
+<td><code>ch</code></td>
+<td>Switzerland</td>
+</tr>
+<tr>
+<td><code>cl</code></td>
+<td>Chile</td>
+</tr>
+<tr>
+<td><code>co</code></td>
+<td>Colombia</td>
+</tr>
+<tr>
+<td><code>cy</code></td>
+<td>Cyprus</td>
+</tr>
+<tr>
+<td><code>cz</code></td>
+<td>Czech Republic</td>
+</tr>
+<tr>
+<td><code>de</code></td>
+<td>Germany</td>
+</tr>
+<tr>
+<td><code>dk</code></td>
+<td>Denmark</td>
+</tr>
+<tr>
+<td><code>ec</code></td>
+<td>Ecuador</td>
+</tr>
+<tr>
+<td><code>ee</code></td>
+<td>Estonia</td>
+</tr>
+<tr>
+<td><code>es</code></td>
+<td>Spain</td>
+</tr>
+<tr>
+<td><code>fi</code></td>
+<td>Finland</td>
+</tr>
+<tr>
+<td><code>fr</code></td>
+<td>France</td>
+</tr>
+<tr>
+<td><code>gb</code></td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td><code>gr</code></td>
+<td>Greece</td>
+</tr>
+<tr>
+<td><code>hk</code></td>
+<td>Hong Kong</td>
+</tr>
+<tr>
+<td><code>hr</code></td>
+<td>Croatia</td>
+</tr>
+<tr>
+<td><code>hu</code></td>
+<td>Hungary</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Indonesia</td>
+</tr>
+<tr>
+<td><code>ie</code></td>
+<td>Ireland</td>
+</tr>
+<tr>
+<td><code>il</code></td>
+<td>Israel</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>India</td>
+</tr>
+<tr>
+<td><code>is</code></td>
+<td>Iceland</td>
+</tr>
+<tr>
+<td><code>it</code></td>
+<td>Italy</td>
+</tr>
+<tr>
+<td><code>jp</code></td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>kr</code></td>
+<td>South Korea</td>
+</tr>
+<tr>
+<td><code>lt</code></td>
+<td>Lithuania</td>
+</tr>
+<tr>
+<td><code>md</code></td>
+<td>Moldova</td>
+</tr>
+<tr>
+<td><code>mk</code></td>
+<td>North Macedonia</td>
+</tr>
+<tr>
+<td><code>mx</code></td>
+<td>Mexico</td>
+</tr>
+<tr>
+<td><code>my</code></td>
+<td>Malaysia</td>
+</tr>
+<tr>
+<td><code>nl</code></td>
+<td>Netherlands</td>
+</tr>
+<tr>
+<td><code>no</code></td>
+<td>Norway</td>
+</tr>
+<tr>
+<td><code>nz</code></td>
+<td>New Zealand</td>
+</tr>
+<tr>
+<td><code>pa</code></td>
+<td>Panama</td>
+</tr>
+<tr>
+<td><code>pe</code></td>
+<td>Peru</td>
+</tr>
+<tr>
+<td><code>ph</code></td>
+<td>Philippines</td>
+</tr>
+<tr>
+<td><code>pl</code></td>
+<td>Poland</td>
+</tr>
+<tr>
+<td><code>pt</code></td>
+<td>Portugal</td>
+</tr>
+<tr>
+<td><code>ro</code></td>
+<td>Romania</td>
+</tr>
+<tr>
+<td><code>rs</code></td>
+<td>Serbia</td>
+</tr>
+<tr>
+<td><code>ru</code></td>
+<td>Russia</td>
+</tr>
+<tr>
+<td><code>se</code></td>
+<td>Sweden</td>
+</tr>
+<tr>
+<td><code>sg</code></td>
+<td>Singapore</td>
+</tr>
+<tr>
+<td><code>th</code></td>
+<td>Thailand</td>
+</tr>
+<tr>
+<td><code>tr</code></td>
+<td>Turkey</td>
+</tr>
+<tr>
+<td><code>ua</code></td>
+<td>Ukraine</td>
+</tr>
+<tr>
+<td><code>us</code></td>
+<td>United States</td>
+</tr>
+<tr>
+<td><code>vn</code></td>
+<td>Vietnam</td>
+</tr>
+<tr>
+<td><code>za</code></td>
+<td>South Africa</td>
+</tr>
+</tbody></table>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)" id="icon-chevronDown"></path></svg>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li>
+<ul>
+<li><a href="#md:streaming-availability-api-typescript-client"><span>Streaming <wbr/>Availability API <wbr/>Type<wbr/>Script <wbr/>Client</span></a></li>
+<li>
+<ul>
+<li><a href="#md:streaming-availability-api"><span>Streaming <wbr/>Availability API</span></a></li>
+<li>
+<ul>
+<li><a href="#md:api-key"><span>API <wbr/>Key</span></a></li>
+<li><a href="#md:useful-links"><span>Useful <wbr/>Links</span></a></li>
+<li><a href="#md:features"><span>Features</span></a></li></ul></li>
+<li><a href="#md:install"><span>Install</span></a></li>
+<li>
+<ul>
+<li><a href="#md:node"><span>Node</span></a></li>
+<li><a href="#md:browser"><span>Browser</span></a></li></ul></li>
+<li><a href="#md:usage"><span>Usage</span></a></li>
+<li>
+<ul>
+<li><a href="#md:node-es-modules"><span>Node (ES modules)</span></a></li>
+<li><a href="#md:node-commonjs"><span>Node (<wbr/>CommonJS)</span></a></li>
+<li><a href="#md:browser-1"><span>Browser</span></a></li></ul></li>
+<li><a href="#md:examples"><span>Examples</span></a></li>
+<li>
+<ul>
+<li><a href="#md:get-the-dark-knight39s-streaming-info-nodees-modules"><span>Get <wbr/>The <wbr/>Dark <wbr/>Knight&#39;s <wbr/>Streaming <wbr/>Info (<wbr/>Node/ES <wbr/>Modules)</span></a></li>
+<li><a href="#md:terms-amp-conditions-and-attribution"><span>Terms &amp; <wbr/>Conditions and <wbr/>Attribution</span></a></li></ul></li>
+<li><a href="#md:faq"><span>FAQ</span></a></li>
+<li><a href="#md:client-libraries"><span>Client <wbr/>Libraries</span></a></li>
+<li><a href="#md:services-supported"><span>Services <wbr/>Supported</span></a></li>
+<li><a href="#md:countries-supported"><span>Countries <wbr/>Supported</span></a></li></ul></li></ul></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>streaming-<wbr/>availability</span></a>
+<ul class="tsd-small-nested-navigation">
+<li><a href="classes/BaseAPI.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-128"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)"></path></g></svg><span>BaseAPI</span></a></li>
+<li><a href="classes/BlobApiResponse.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Blob<wbr/>Api<wbr/>Response</span></a></li>
+<li><a href="classes/Configuration.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Configuration</span></a></li>
+<li><a href="classes/DefaultApi.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Default<wbr/>Api</span></a></li>
+<li><a href="classes/FetchError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Fetch<wbr/>Error</span></a></li>
+<li><a href="classes/JSONApiResponse.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>JSONApi<wbr/>Response</span></a></li>
+<li><a href="classes/RequiredError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Required<wbr/>Error</span></a></li>
+<li><a href="classes/ResponseError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Response<wbr/>Error</span></a></li>
+<li><a href="classes/TextApiResponse.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Text<wbr/>Api<wbr/>Response</span></a></li>
+<li><a href="classes/VoidApiResponse.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Void<wbr/>Api<wbr/>Response</span></a></li>
+<li><a href="interfaces/Addon.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg><span>Addon</span></a></li>
+<li><a href="interfaces/ApiResponse.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Api<wbr/>Response</span></a></li>
+<li><a href="interfaces/Change.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Change</span></a></li>
+<li><a href="interfaces/ChangeSet.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Change<wbr/>Set</span></a></li>
+<li><a href="interfaces/ChangesRequest.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Changes<wbr/>Request</span></a></li>
+<li><a href="interfaces/ChangesResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Changes<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/ConfigurationParameters.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Configuration<wbr/>Parameters</span></a></li>
+<li><a href="interfaces/Consume.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Consume</span></a></li>
+<li><a href="interfaces/Episode.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Episode</span></a></li>
+<li><a href="interfaces/ErrorContext.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Error<wbr/>Context</span></a></li>
+<li><a href="interfaces/FetchParams.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Fetch<wbr/>Params</span></a></li>
+<li><a href="interfaces/Genre.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Genre</span></a></li>
+<li><a href="interfaces/GenresResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Genres<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/GetByIdRequest.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Get<wbr/>By<wbr/>Id<wbr/>Request</span></a></li>
+<li><a href="interfaces/GetResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Get<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/LeavingRequest.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Leaving<wbr/>Request</span></a></li>
+<li><a href="interfaces/Locale.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Locale</span></a></li>
+<li><a href="interfaces/Middleware.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Middleware</span></a></li>
+<li><a href="interfaces/NotFoundResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Not<wbr/>Found<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/Price.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Price</span></a></li>
+<li><a href="interfaces/RequestContext.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Request<wbr/>Context</span></a></li>
+<li><a href="interfaces/RequestOpts.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Request<wbr/>Opts</span></a></li>
+<li><a href="interfaces/ResponseContext.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Response<wbr/>Context</span></a></li>
+<li><a href="interfaces/ResponseTransformer.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Response<wbr/>Transformer</span></a></li>
+<li><a href="interfaces/SearchByFiltersRequest.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Request</span></a></li>
+<li><a href="interfaces/SearchByTitleRequest.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Search<wbr/>By<wbr/>Title<wbr/>Request</span></a></li>
+<li><a href="interfaces/SearchFiltersResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Search<wbr/>Filters<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/SearchTitleResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Search<wbr/>Title<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/Season.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Season</span></a></li>
+<li><a href="interfaces/SeriesStatus.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Series<wbr/>Status</span></a></li>
+<li><a href="interfaces/Service.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Service</span></a></li>
+<li><a href="interfaces/ServiceCountryInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Service<wbr/>Country<wbr/>Info</span></a></li>
+<li><a href="interfaces/ServicesResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Services<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="interfaces/Show.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Show</span></a></li>
+<li><a href="interfaces/StreamingOption.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Streaming<wbr/>Option</span></a></li>
+<li><a href="interfaces/Subtitle.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Subtitle</span></a></li>
+<li><a href="interfaces/SupportedStreamingTypes.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Supported<wbr/>Streaming<wbr/>Types</span></a></li>
+<li><a href="interfaces/UpcomingChangeSet.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Upcoming<wbr/>Change<wbr/>Set</span></a></li>
+<li><a href="interfaces/UpcomingChangesResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Upcoming<wbr/>Changes<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="types/ChangesChangeTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4194304"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>Changes<wbr/>Change<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/ChangesOutputLanguageEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Changes<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="types/ChangesTargetTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Changes<wbr/>Target<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/EpisodeTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Episode<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/FetchAPI.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>FetchAPI</span></a></li>
+<li><a href="types/GetByIdOutputLanguageEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Get<wbr/>By<wbr/>Id<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="types/HTTPBody.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>HTTPBody</span></a></li>
+<li><a href="types/HTTPHeaders.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>HTTPHeaders</span></a></li>
+<li><a href="types/HTTPMethod.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>HTTPMethod</span></a></li>
+<li><a href="types/HTTPQuery.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>HTTPQuery</span></a></li>
+<li><a href="types/HTTPRequestInit.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>HTTPRequest<wbr/>Init</span></a></li>
+<li><a href="types/InitOverrideFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Init<wbr/>Override<wbr/>Function</span></a></li>
+<li><a href="types/Json.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Json</span></a></li>
+<li><a href="types/LeavingOutputLanguageEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Leaving<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="types/LeavingTargetTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Leaving<wbr/>Target<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/ModelPropertyNaming.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Model<wbr/>Property<wbr/>Naming</span></a></li>
+<li><a href="types/SearchByFiltersGenresRelationEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Genres<wbr/>Relation<wbr/>Enum</span></a></li>
+<li><a href="types/SearchByFiltersOrderByEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Order<wbr/>By<wbr/>Enum</span></a></li>
+<li><a href="types/SearchByFiltersOutputLanguageEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="types/SearchByFiltersShowTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Show<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/SearchByTitleOutputLanguageEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Search<wbr/>By<wbr/>Title<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="types/SearchByTitleShowTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Search<wbr/>By<wbr/>Title<wbr/>Show<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/SeasonTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Season<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/SeriesStatusStatusTextEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Series<wbr/>Status<wbr/>Status<wbr/>Text<wbr/>Enum</span></a></li>
+<li><a href="types/ShowTypeEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Show<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="types/StreamingOptionQualityEnum.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Streaming<wbr/>Option<wbr/>Quality<wbr/>Enum</span></a></li>
+<li><a href="types/StreamingType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Streaming<wbr/>Type</span></a></li>
+<li><a href="variables/BASE_PATH.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-32"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-variable)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.106 16L8.85 7.24H9.966L11.454 13.192C11.558 13.608 11.646 13.996 11.718 14.356C11.79 14.708 11.842 14.976 11.874 15.16C11.906 14.976 11.954 14.708 12.018 14.356C12.09 13.996 12.178 13.608 12.282 13.192L13.758 7.24H14.85L12.582 16H11.106Z" fill="var(--color-text)"></path></g></svg><span>BASE_<wbr/>PATH</span></a></li>
+<li><a href="variables/COLLECTION_FORMATS.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>COLLECTION_<wbr/>FORMATS</span></a></li>
+<li><a href="variables/ChangesChangeTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Changes<wbr/>Change<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/ChangesOutputLanguageEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Changes<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="variables/ChangesTargetTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Changes<wbr/>Target<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/DefaultConfig.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Default<wbr/>Config</span></a></li>
+<li><a href="variables/EpisodeTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Episode<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/GetByIdOutputLanguageEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Get<wbr/>By<wbr/>Id<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="variables/LeavingOutputLanguageEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Leaving<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="variables/LeavingTargetTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Leaving<wbr/>Target<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/SearchByFiltersGenresRelationEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Genres<wbr/>Relation<wbr/>Enum</span></a></li>
+<li><a href="variables/SearchByFiltersOrderByEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Order<wbr/>By<wbr/>Enum</span></a></li>
+<li><a href="variables/SearchByFiltersOutputLanguageEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="variables/SearchByFiltersShowTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Search<wbr/>By<wbr/>Filters<wbr/>Show<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/SearchByTitleOutputLanguageEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Search<wbr/>By<wbr/>Title<wbr/>Output<wbr/>Language<wbr/>Enum</span></a></li>
+<li><a href="variables/SearchByTitleShowTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Search<wbr/>By<wbr/>Title<wbr/>Show<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/SeasonTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Season<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/SeriesStatusStatusTextEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Series<wbr/>Status<wbr/>Status<wbr/>Text<wbr/>Enum</span></a></li>
+<li><a href="variables/ShowTypeEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Show<wbr/>Type<wbr/>Enum</span></a></li>
+<li><a href="variables/StreamingOptionQualityEnum-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Streaming<wbr/>Option<wbr/>Quality<wbr/>Enum</span></a></li>
+<li><a href="variables/StreamingType-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Streaming<wbr/>Type</span></a></li>
+<li><a href="functions/AddonFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-64"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)"></path></g></svg><span>Addon<wbr/>FromJSON</span></a></li>
+<li><a href="functions/AddonFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Addon<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/AddonToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Addon<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ChangeFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Change<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ChangeFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Change<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ChangeSetFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Change<wbr/>Set<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ChangeSetFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Change<wbr/>Set<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ChangeSetToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Change<wbr/>Set<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ChangeToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Change<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ChangesResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Changes<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ChangesResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Changes<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ChangesResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Changes<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/EpisodeFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Episode<wbr/>FromJSON</span></a></li>
+<li><a href="functions/EpisodeFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Episode<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/EpisodeToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Episode<wbr/>ToJSON</span></a></li>
+<li><a href="functions/GenreFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Genre<wbr/>FromJSON</span></a></li>
+<li><a href="functions/GenreFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Genre<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/GenreToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Genre<wbr/>ToJSON</span></a></li>
+<li><a href="functions/GenresResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Genres<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/GenresResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Genres<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/GenresResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Genres<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/GetResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Get<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/GetResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Get<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/GetResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Get<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/LocaleFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Locale<wbr/>FromJSON</span></a></li>
+<li><a href="functions/LocaleFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Locale<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/LocaleToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Locale<wbr/>ToJSON</span></a></li>
+<li><a href="functions/NotFoundResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Not<wbr/>Found<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/NotFoundResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Not<wbr/>Found<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/NotFoundResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Not<wbr/>Found<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/PriceFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Price<wbr/>FromJSON</span></a></li>
+<li><a href="functions/PriceFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Price<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/PriceToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Price<wbr/>ToJSON</span></a></li>
+<li><a href="functions/SearchFiltersResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Search<wbr/>Filters<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/SearchFiltersResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Search<wbr/>Filters<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/SearchFiltersResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Search<wbr/>Filters<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/SearchTitleResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Search<wbr/>Title<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/SearchTitleResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Search<wbr/>Title<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/SearchTitleResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Search<wbr/>Title<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/SeasonFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Season<wbr/>FromJSON</span></a></li>
+<li><a href="functions/SeasonFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Season<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/SeasonToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Season<wbr/>ToJSON</span></a></li>
+<li><a href="functions/SeriesStatusFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Series<wbr/>Status<wbr/>FromJSON</span></a></li>
+<li><a href="functions/SeriesStatusFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Series<wbr/>Status<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/SeriesStatusToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Series<wbr/>Status<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ServiceCountryInfoFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Service<wbr/>Country<wbr/>Info<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ServiceCountryInfoFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Service<wbr/>Country<wbr/>Info<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ServiceCountryInfoToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Service<wbr/>Country<wbr/>Info<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ServiceFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Service<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ServiceFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Service<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ServiceToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Service<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ServicesResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Services<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ServicesResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Services<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ServicesResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Services<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/ShowFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Show<wbr/>FromJSON</span></a></li>
+<li><a href="functions/ShowFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Show<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/ShowToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Show<wbr/>ToJSON</span></a></li>
+<li><a href="functions/StreamingOptionFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Streaming<wbr/>Option<wbr/>FromJSON</span></a></li>
+<li><a href="functions/StreamingOptionFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Streaming<wbr/>Option<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/StreamingOptionToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Streaming<wbr/>Option<wbr/>ToJSON</span></a></li>
+<li><a href="functions/StreamingTypeFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Streaming<wbr/>Type<wbr/>FromJSON</span></a></li>
+<li><a href="functions/StreamingTypeFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Streaming<wbr/>Type<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/StreamingTypeToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Streaming<wbr/>Type<wbr/>ToJSON</span></a></li>
+<li><a href="functions/SubtitleFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Subtitle<wbr/>FromJSON</span></a></li>
+<li><a href="functions/SubtitleFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Subtitle<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/SubtitleToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Subtitle<wbr/>ToJSON</span></a></li>
+<li><a href="functions/SupportedStreamingTypesFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Supported<wbr/>Streaming<wbr/>Types<wbr/>FromJSON</span></a></li>
+<li><a href="functions/SupportedStreamingTypesFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Supported<wbr/>Streaming<wbr/>Types<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/SupportedStreamingTypesToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Supported<wbr/>Streaming<wbr/>Types<wbr/>ToJSON</span></a></li>
+<li><a href="functions/UpcomingChangeSetFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Upcoming<wbr/>Change<wbr/>Set<wbr/>FromJSON</span></a></li>
+<li><a href="functions/UpcomingChangeSetFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Upcoming<wbr/>Change<wbr/>Set<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/UpcomingChangeSetToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Upcoming<wbr/>Change<wbr/>Set<wbr/>ToJSON</span></a></li>
+<li><a href="functions/UpcomingChangesResponseSchemaFromJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Upcoming<wbr/>Changes<wbr/>Response<wbr/>Schema<wbr/>FromJSON</span></a></li>
+<li><a href="functions/UpcomingChangesResponseSchemaFromJSONTyped.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Upcoming<wbr/>Changes<wbr/>Response<wbr/>Schema<wbr/>FromJSONTyped</span></a></li>
+<li><a href="functions/UpcomingChangesResponseSchemaToJSON.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>Upcoming<wbr/>Changes<wbr/>Response<wbr/>Schema<wbr/>ToJSON</span></a></li>
+<li><a href="functions/canConsumeForm.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>can<wbr/>Consume<wbr/>Form</span></a></li>
+<li><a href="functions/exists.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>exists</span></a></li>
+<li><a href="functions/instanceOfAddon.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Addon</span></a></li>
+<li><a href="functions/instanceOfChange.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Change</span></a></li>
+<li><a href="functions/instanceOfChangeSet.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Change<wbr/>Set</span></a></li>
+<li><a href="functions/instanceOfChangesResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Changes<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfEpisode.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Episode</span></a></li>
+<li><a href="functions/instanceOfGenre.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Genre</span></a></li>
+<li><a href="functions/instanceOfGenresResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Genres<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfGetResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Get<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfLocale.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Locale</span></a></li>
+<li><a href="functions/instanceOfNotFoundResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Not<wbr/>Found<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfPrice.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Price</span></a></li>
+<li><a href="functions/instanceOfSearchFiltersResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Search<wbr/>Filters<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfSearchTitleResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Search<wbr/>Title<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfSeason.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Season</span></a></li>
+<li><a href="functions/instanceOfSeriesStatus.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Series<wbr/>Status</span></a></li>
+<li><a href="functions/instanceOfService.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Service</span></a></li>
+<li><a href="functions/instanceOfServiceCountryInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Service<wbr/>Country<wbr/>Info</span></a></li>
+<li><a href="functions/instanceOfServicesResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Services<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/instanceOfShow.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Show</span></a></li>
+<li><a href="functions/instanceOfStreamingOption.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Streaming<wbr/>Option</span></a></li>
+<li><a href="functions/instanceOfSubtitle.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Subtitle</span></a></li>
+<li><a href="functions/instanceOfSupportedStreamingTypes.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Supported<wbr/>Streaming<wbr/>Types</span></a></li>
+<li><a href="functions/instanceOfUpcomingChangeSet.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Upcoming<wbr/>Change<wbr/>Set</span></a></li>
+<li><a href="functions/instanceOfUpcomingChangesResponseSchema.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>instance<wbr/>Of<wbr/>Upcoming<wbr/>Changes<wbr/>Response<wbr/>Schema</span></a></li>
+<li><a href="functions/mapValues.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>map<wbr/>Values</span></a></li>
+<li><a href="functions/querystring.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>querystring</span></a></li></ul></nav></div></div></div>
+<div class="tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div></body></html>

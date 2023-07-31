@@ -1,0 +1,16 @@
+{
+  "name": "science-fiction-movies",
+  "version": "1.0.0",
+  "description": "Get the streaming availability of Science-Fiction movies",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Movie of the Night",
+  "license": "MIT",
+  "dependencies": {
+    "streaming-availability": "^1.0.4"
+  },
+  "type": "module"
+}

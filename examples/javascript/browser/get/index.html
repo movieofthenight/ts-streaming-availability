@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Example</title>
+    <style>
+        #result {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+    </style>
+</head>
+<body>
+<label for="imdb-id">Imdb Id:</label><input id="imdb-id" type="text">
+<div id="result"></div>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.4/bundle.js"></script>
+<script>
+    // Create the client
+    const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
+    const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
+
+    const country = "us"; // Update with other country codes as you want
+
+	const imdbIdInput = document.getElementById("imdb-id");
+	const resultDiv = document.getElementById("result");
+
+	// When there's a new input on the imdbId input, then get the details of the given id
+	imdbIdInput.addEventListener("input", () => {
+		let imdbId = imdbIdInput.value;
+		// Imdb id is too short to be valid, don't do anything
+		if(imdbId.length < 9) {
+			return;
+        }
+		client.getById({
+			imdbId: imdbId,
+		}).then(response => {
+			const result = response.result;
+			// Clean the resultDiv from the previous items added, if any
+			resultDiv.innerHTML = "";
+			// Loop over all the streaming options available in the country that we are interested
+			for(let streamingOption of result.streamingInfo[country]) {
+				// Prepare the display text for the streaming option
+				let text = `${result.title} is available on ${streamingOption.service} via ${streamingOption.streamingType}`;
+				// If the video quality info is available, insert it to the text
+				if(streamingOption.quality != null) {
+					text += ` with ${streamingOption.quality.toUpperCase()} quality`;
+				}
+				// If the price info (for rentable/buyable shows) is available, insert it to the text
+				if(streamingOption.price != null) {
+					text += ` for ${streamingOption.price.formatted}`;
+				}
+				// Create a new link
+                let a = document.createElement("a");
+				// Give a link deep to the streaming option
+				a.href = streamingOption.link;
+				a.innerText = text;
+				resultDiv.appendChild(a);
+			}
+		});
+    });
+</script>
+</body>
+</html>

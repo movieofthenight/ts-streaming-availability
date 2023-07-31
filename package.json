@@ -1,0 +1,47 @@
+{
+	"author": "Movie of the Night",
+	"bugs": "https://github.com/movieofthenight/ts-streaming-availability/issues",
+	"description": "Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 58 countries!",
+	"devDependencies": {
+		"browserify": "^17.0.0",
+		"terser": "^5.19.2",
+		"typedoc": "^0.24.8",
+		"typescript": "^4.0"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"homepage": "https://www.movieofthenight.com/about/api",
+	"keywords": [
+		"streaming",
+		"streaming-availability",
+		"movie",
+		"movies",
+		"series",
+		"netflix",
+		"disney",
+		"disney+",
+		"hbo-max",
+		"hbo",
+		"max",
+		"hulu",
+		"apple-tv",
+		"prime-video",
+		"amazon-prime-video",
+		"amazon-prime",
+		"api"
+	],
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"name": "streaming-availability",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/movieofthenight/ts-streaming-availability.git"
+	},
+	"scripts": {
+		"build": "tsc",
+		"prepare": "npm run build"
+	},
+	"typings": "./dist/index.d.ts",
+	"version": "1.0.4"
+}
