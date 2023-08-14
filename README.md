@@ -62,7 +62,7 @@ npm i streaming-availability
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.4/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.5/bundle.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -75,7 +75,7 @@ where you can access to the module.
 
 ## Usage
 
-### Node (ES modules)
+### Node (ES Modules)
 
 ```js
 import streamingAvailability from "streaming-availability";
@@ -88,6 +88,15 @@ const client = new streamingAvailability.DefaultApi(new streamingAvailability.Co
 
 ```js
 const streamingAvailability = require("streaming-availability");
+const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
+const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
+// Start using the client
+```
+
+### Node with TypeScript
+
+```ts
+import * as streamingAvailability from "streaming-availability";
 const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
 const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
 // Start using the client
@@ -154,7 +163,7 @@ client.getById({
 > Checkout [examples](https://github.com/movieofthenight/ts-streaming-availability/tree/main/examples)
 folder for the rest of the examples.
 
-### Terms & Conditions and Attribution
+## Terms & Conditions and Attribution
 
 While the client libraries have MIT licenses,
 the Streaming Availability API itself has further
