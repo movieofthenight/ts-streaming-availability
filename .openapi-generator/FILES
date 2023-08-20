@@ -10,6 +10,9 @@ src/models/Addon.ts
 src/models/Change.ts
 src/models/ChangeSet.ts
 src/models/ChangesResponseSchema.ts
+src/models/CountriesResponseSchema.ts
+src/models/Country.ts
+src/models/DeprecatedServiceInfo.ts
 src/models/Episode.ts
 src/models/Genre.ts
 src/models/GenresResponseSchema.ts
@@ -23,6 +26,7 @@ src/models/Season.ts
 src/models/SeriesStatus.ts
 src/models/Service.ts
 src/models/ServiceCountryInfo.ts
+src/models/ServiceImages.ts
 src/models/ServicesResponseSchema.ts
 src/models/Show.ts
 src/models/StreamingOption.ts

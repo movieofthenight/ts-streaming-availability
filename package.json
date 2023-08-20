@@ -3,8 +3,10 @@
 	"bugs": "https://github.com/movieofthenight/ts-streaming-availability/issues",
 	"description": "Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 58 countries!",
 	"devDependencies": {
+		"@types/node": "^20.5.1",
 		"browserify": "^17.0.0",
 		"terser": "^5.19.2",
+		"ts-node": "^10.9.1",
 		"typedoc": "^0.24.8",
 		"typescript": "^4.0"
 	},
@@ -40,8 +42,9 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"prepare": "npm run build"
+		"prepare": "npm run build",
+		"test": "ts-node test/test.ts"
 	},
 	"typings": "./dist/index.d.ts",
-	"version": "1.0.5"
+	"version": "2.0.0"
 }

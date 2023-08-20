@@ -14,7 +14,7 @@
     "typescript": "^4.0"
   },
   "dependencies": {
-    "streaming-availability": "^1.0.4"
+    "streaming-availability": "^2.0.0"
   },
   "type": "module"
 }

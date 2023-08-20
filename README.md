@@ -62,7 +62,7 @@ npm i streaming-availability
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.5/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.0.0/bundle.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -111,7 +111,7 @@ const client = new streamingAvailability.DefaultApi(new streamingAvailability.Co
     <title>Streaming Availability API In Browser Example</title>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@1.0.4/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.0.0/bundle.js"></script>
 <script>
     const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
     const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
@@ -243,12 +243,12 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 | `paramount` | Paramount+ | 18 Countries |
 | `starz` | Starz | United States |
 | `showtime` | Showtime | United States |
-| `apple` | Apple TV+ | 52 Countries |
+| `apple` | Apple TV | 52 Countries |
 | `mubi` | Mubi | 55 Countries |
 | `stan` | Stan | Australia |
 | `now` | Now | United Kingdom, Ireland, Italy |
 | `crave` | Crave | Canada |
-| `all4` | All 4 | United Kingdom, Ireland |
+| `all4` | Channel 4 | United Kingdom, Ireland |
 | `iplayer` | BBC iPlayer | United Kingdom |
 | `britbox` | BritBox | United Kingdom, United States, Canada, Australia, South Africa |
 | `hotstar` | Hotstar | India, Canada, United Kingdom, Indonesia, Singapore |

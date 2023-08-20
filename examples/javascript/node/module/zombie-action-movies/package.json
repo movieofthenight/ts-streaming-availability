@@ -10,7 +10,7 @@
   "author": "Movie of the Night",
   "license": "MIT",
   "dependencies": {
-    "streaming-availability": "^1.0.4"
+    "streaming-availability": "^2.0.0"
   },
   "type": "module"
 }
