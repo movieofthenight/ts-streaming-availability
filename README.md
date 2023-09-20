@@ -35,6 +35,11 @@ To send more requests, you can upgrade to paid plans whenever you like.
 - Search for movies and series via their titles, genres, keywords, release years on
 specific streaming services (e.g.: Get all the zombie action movies available
 on Netflix and Disney+)
+- Order the search results by titles, release year
+or popularity over different time periods
+(e.g.: get the all-time most popular movies on Netflix US,
+get the most popular series in the last 7 days
+on Amazon Prime and Disney+ in the United Kingdom)
 - Returned streaming availability info includes:
   - Deep links into the streaming services for
 movies, series, seasons and episodes.
@@ -62,7 +67,7 @@ npm i streaming-availability
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.0.0/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.1.0/bundle.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -111,7 +116,7 @@ const client = new streamingAvailability.DefaultApi(new streamingAvailability.Co
     <title>Streaming Availability API In Browser Example</title>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.0.0/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.1.0/bundle.js"></script>
 <script>
     const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
     const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
@@ -236,7 +241,7 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 | ---------- | ------------ | ------------------- |
 | `netflix` | Netflix | 57 Countries |
 | `prime` | Amazon Prime Video | 56 Countries |
-| `disney` | Disney+ | 38 Countries |
+| `disney` | Disney+ | 35 Countries |
 | `hbo` | HBO Max | 24 Countries |
 | `hulu` | Hulu | United States |
 | `peacock` | Peacock | United States |
@@ -251,7 +256,7 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 | `all4` | Channel 4 | United Kingdom, Ireland |
 | `iplayer` | BBC iPlayer | United Kingdom |
 | `britbox` | BritBox | United Kingdom, United States, Canada, Australia, South Africa |
-| `hotstar` | Hotstar | India, Canada, United Kingdom, Indonesia, Singapore |
+| `hotstar` | Hotstar | India, Canada, United Kingdom, Singapore |
 | `zee5` | Zee5 | 58 Countries |
 | `curiosity` | Curiosity Stream | 57 Countries |
 | `wow` | Wow | Germany |

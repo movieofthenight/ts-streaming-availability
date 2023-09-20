@@ -10,7 +10,7 @@
   "author": "Movie of the Night",
   "license": "MIT",
   "dependencies": {
-    "streaming-availability": "^2.0.0"
+    "streaming-availability": "^2.1.0"
   },
   "type": "commonjs"
 }
