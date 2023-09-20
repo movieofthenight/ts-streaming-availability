@@ -46,5 +46,5 @@
 		"test": "ts-node test/test.ts"
 	},
 	"typings": "./dist/index.d.ts",
-	"version": "2.1.0"
+	"version": "v2.1.1"
 }
