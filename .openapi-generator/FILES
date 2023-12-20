@@ -17,6 +17,7 @@ src/models/Episode.ts
 src/models/Genre.ts
 src/models/GenresResponseSchema.ts
 src/models/GetResponseSchema.ts
+src/models/ImageSet.ts
 src/models/Locale.ts
 src/models/NotFoundResponseSchema.ts
 src/models/Price.ts
@@ -26,7 +27,6 @@ src/models/Season.ts
 src/models/SeriesStatus.ts
 src/models/Service.ts
 src/models/ServiceCountryInfo.ts
-src/models/ServiceImages.ts
 src/models/ServicesResponseSchema.ts
 src/models/Show.ts
 src/models/StreamingOption.ts

@@ -7,7 +7,7 @@ This client can be used in both JavaScript and TypeScript projects; and both in 
 
 ## Streaming Availability API
 
-Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 58 countries!
+Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 59 countries!
 
 ### API Key
 
@@ -67,7 +67,7 @@ npm i streaming-availability
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v2.1.1/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v3.0.0/bundle.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -116,7 +116,7 @@ const client = new streamingAvailability.DefaultApi(new streamingAvailability.Co
     <title>Streaming Availability API In Browser Example</title>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.1.0/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.1.1/bundle.js"></script>
 <script>
     const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
     const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
@@ -142,7 +142,7 @@ const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
 
 const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
 
-const country = "us"; // Update with other country codes as you want, we support 58 countries!
+const country = "us"; // Update with other country codes as you want, we support 59 countries!
 
 const imdbId = "tt0468569";
 
@@ -239,8 +239,8 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 
 | Service Id | Service Name | Supported Countries |
 | ---------- | ------------ | ------------------- |
-| `netflix` | Netflix | 57 Countries |
-| `prime` | Amazon Prime Video | 56 Countries |
+| `netflix` | Netflix | 58 Countries |
+| `prime` | Prime Video | 56 Countries |
 | `disney` | Disney+ | 35 Countries |
 | `hbo` | HBO Max | 24 Countries |
 | `hulu` | Hulu | United States |
@@ -318,6 +318,7 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 | `ru` | Russia |
 | `se` | Sweden |
 | `sg` | Singapore |
+| `si` | Slovenia |
 | `th` | Thailand |
 | `tr` | Turkey |
 | `ua` | Ukraine |
