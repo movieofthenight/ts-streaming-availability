@@ -67,7 +67,7 @@ npm i streaming-availability
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v3.0.0/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v3.0.1/bundle.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -116,7 +116,7 @@ const client = new streamingAvailability.DefaultApi(new streamingAvailability.Co
     <title>Streaming Availability API In Browser Example</title>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@2.1.1/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v3.0.1/bundle.js"></script>
 <script>
     const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
     const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
