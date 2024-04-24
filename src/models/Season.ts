@@ -33,7 +33,7 @@ import {
  */
 export interface Season {
     /**
-     * Type of the item. Always "season".
+     * Type of the item. Always `season`.
      * @type {string}
      * @memberof Season
      */

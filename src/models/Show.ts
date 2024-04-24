@@ -45,26 +45,26 @@ import {
 } from './StreamingOption';
 
 /**
- * A show object represents a movie or a series. Type of the show is determined by the "showType" property,
- * which is either "movie" or "series". Based on this type, some properties are omitted,
- * for example a movie does not have "seasonCount" and "episodeCount" properties.
+ * A show object represents a movie or a series. Type of the show is determined by the `showType` property,
+ * which is either `movie` or `series`. Based on this type, some properties are omitted,
+ * for example a movie does not have `seasonCount` and `episodeCount` properties.
  * 
  * Show object contains the details such as the title, overview, genres, cast, rating and images.
- * You can find the streaming availability information under "streamingOptions" property.
+ * You can find the streaming availability information under `streamingOptions` property.
  * Each streaming option contains the service info, deep link, video quality, available audios and subtitles
  * and more. It also includes the price if the show is available to buy or rent;
  * and addon info if the show is available via an addon (such as Apple TV Channels, Prime Video Channels etc.).
  * 
- * You can also find the seasons of the series under the "seasons" property,
- * and the episodes of a season under the "episodes" property of the "season" object.
- * Via the "streamingOptions" property of seasons and episodes,
+ * You can also find the seasons of the series under the `seasons` property,
+ * and the episodes of a season under the `episodes` property of the `season` object.
+ * Via the `streamingOptions` property of seasons and episodes,
  * you can get the individual streaming options of them.
  * These streaming options include the same set of properties as the show streaming options,
  * so you can use them to get deep links to episodes and seasons, and to see available audios and subtitles.
  * 
  * Note that seasons and episodes are not included in the search results
- * unless you set the "series_granularity" parameter to "seasons" or "episodes".
- * For more info, check out the "series_granularity" parameter of the search endpoints.
+ * unless you set the `series_granularity` parameter to `seasons` or `episodes`.
+ * For more info, check out the `series_granularity` parameter of the search endpoints.
  * 
  * There are multiple ways to retrieve shows.
  * You can retrieve a show by its IMDb or TMDB id via [/shows/{id}](#get-a-show) endpoint;
@@ -78,7 +78,7 @@ import {
  */
 export interface Show {
     /**
-     * Type of the item. Always "show".
+     * Type of the item. Always `show`.
      * @type {string}
      * @memberof Show
      */

@@ -27,7 +27,7 @@ import {
  */
 export interface Episode {
     /**
-     * Type of the item. Always "episode".
+     * Type of the item. Always `episode`.
      * @type {string}
      * @memberof Episode
      */
