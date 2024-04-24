@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import * as streamingAvailability from "../src/index";
 
-type TestFunction = (client: streamingAvailability.ShowsApi) => Promise<any>
+type TestFunction = (client: streamingAvailability.Client) => Promise<any>
 
 const testMap = new Map<string, TestFunction>(
 	[
@@ -15,23 +15,23 @@ if(!rapidApikey) {
 	throw new Error("Missing RAPID_API_KEY environment variable")
 }
 
-const showsClient = new streamingAvailability.ShowsApi(new streamingAvailability.Configuration({apiKey: rapidApikey}));
+const client = new streamingAvailability.Client(new streamingAvailability.Configuration({apiKey: rapidApikey}));
 
 testMap.forEach((testFunction, name) => {
 	test(name, () => {
-		return testFunction(showsClient)
+		return testFunction(client)
 	})
 })
 
-function testGetShow(client: streamingAvailability.ShowsApi): Promise<streamingAvailability.Show> {
-	return client.getShow({
+function testGetShow(client: streamingAvailability.Client): Promise<streamingAvailability.Show> {
+	return client.showsApi.getShow({
 		id: "tt0068646",
 		country: "us",
 	})
 }
 
-function testSearchShows(client: streamingAvailability.ShowsApi): Promise<streamingAvailability.SearchResult> {
-	return client.searchShowsByFilters({
+function testSearchShows(client: streamingAvailability.Client): Promise<streamingAvailability.SearchResult> {
+	return client.showsApi.searchShowsByFilters({
 		catalogs: ["netflix"],
 		country: "us",
 		genres: ["action"],

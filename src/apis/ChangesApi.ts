@@ -54,7 +54,7 @@ export interface GetChangesRequest {
 export class ChangesApi extends runtime.BaseAPI {
 
     /**
-     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is `25`.  Changes are listed under `changes` field, and shows affected by these changes are listed under `shows` field. 
+     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is 25.  Changes are listed under changes field, and shows affected by these changes are listed under shows field. 
      * Get Changes
      */
     async getChangesRaw(requestParameters: GetChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ChangesResult>> {
@@ -142,7 +142,7 @@ export class ChangesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is `25`.  Changes are listed under `changes` field, and shows affected by these changes are listed under `shows` field. 
+     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is 25.  Changes are listed under changes field, and shows affected by these changes are listed under shows field. 
      * Get Changes
      */
     async getChanges(requestParameters: GetChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ChangesResult> {

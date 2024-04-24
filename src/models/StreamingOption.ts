@@ -78,7 +78,7 @@ export interface StreamingOption {
     addon?: Addon;
     /**
      * Deep link to the streaming option's page in the web app of the streaming service.
-     * Unlike `videoLink`, this field is guaranteed to be populated.
+     * Unlike videoLink, this field is guaranteed to be populated.
      * 
      * @type {string}
      * @memberof StreamingOption
@@ -87,7 +87,7 @@ export interface StreamingOption {
     /**
      * Deep link to the video associated with the streaming option.
      * Omitted if there's no direct link to the video.
-     * Might have the same value as `link`.
+     * Might have the same value as link.
      * 
      * @type {string}
      * @memberof StreamingOption

@@ -23,7 +23,7 @@ import { mapValues } from '../runtime';
  * for the given price.
  * If the price is null, that means sub-items of the series or the season are available to buy or rent,
  * but it is not possible to buy or rent the entire series or the season as a whole at once.
- * In this case, the price of the sub-items can be found in the `episodes` or `seasons` array.
+ * In this case, the price of the sub-items can be found in the episodes or seasons array.
  * 
  * @export
  * @interface Price

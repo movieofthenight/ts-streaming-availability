@@ -68,7 +68,7 @@ npm i streaming-availability
 ### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.0/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.1/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
