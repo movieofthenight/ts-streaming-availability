@@ -23,8 +23,6 @@ To send more requests, you can upgrade to paid plans whenever you like.
 
 - [Subscription Page on RapidAPI](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/pricing)
 
-- [Full Documentation of All Available Endpoints](https://www.movieofthenight.com/about/api/documentation)
-
 - [Contact Form](https://www.movieofthenight.com/contact)
 
 - [Home Page of the API on RapidAPI](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/)
@@ -53,12 +51,13 @@ movies, series, seasons and episodes,
 (e.g. via subscription, to buy/rent, for free, available via an addons),
   - Price and currency information for buyable/rentable shows
 - Channel and addon support (e.g. Apple TV Channels, Hulu Addons, Prime Video Channels)
-- Output also includes TMDB and IMDb ids for every show.
+- Posters, backdrops, cast & director information, genres, rating and many other details of the shows
+- Output also includes TMDB and IMDb ids for every show
 
 
 ## Install
 
-### Node
+### Via NPM
 
 ```
 npm i streaming-availability
@@ -66,109 +65,14 @@ npm i streaming-availability
 
 > Requires Node version `18.0.0` or higher.
 
-### Browser
+### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v3.1.0/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.0/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
 where you can access to the module.
-
-> Warning: As it would expose your API key to visitors of the page,
-> use this option only for private personal projects, or proof-of-concept works.
->
-> Do not use it for any public projects.
-
-## Usage
-
-### Node (ES Modules)
-
-```js
-import streamingAvailability from "streaming-availability";
-const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
-const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
-// Start using the client
-```
-
-### Node (CommonJS)
-
-```js
-const streamingAvailability = require("streaming-availability");
-const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
-const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
-// Start using the client
-```
-
-### Node with TypeScript
-
-```ts
-import * as streamingAvailability from "streaming-availability";
-const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
-const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
-// Start using the client
-```
-
-### Browser
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Streaming Availability API In Browser Example</title>
-</head>
-<body>
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v3.1.0/bundle.js"></script>
-<script>
-    const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
-    const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
-    // Start using the client
-</script>
-</body>
-</html>
-```
-
-> Warning: As it would expose your API key to visitors of the page,
-> use this option only for private personal projects, or proof-of-concept works.
->
-> Do not use it for any public projects.
-
-## Examples
-
-### Get The Dark Knight's Streaming Info (Node/ES Modules)
-
-```js
-import streamingAvailability from "streaming-availability"
-
-const RAPID_API_KEY = "PUT_YOUR_RAPIDAPI_KEY_HERE";
-
-const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: RAPID_API_KEY}));
-
-const country = "us"; // Update with other country codes as you want, we support 59 countries!
-
-const imdbId = "tt0468569";
-
-client.getById({
-	imdbId: imdbId,
-}).then(response => {
-	const result = response.result;
-	for(let streamingOption of result.streamingInfo[country]) {
-		let output = `${result.title} (${result.year}) is available on ${streamingOption.service} via ${streamingOption.streamingType} at link ${streamingOption.link}`;
-		if(streamingOption.quality != null) {
-			output += ` with ${streamingOption.quality.toUpperCase()} quality`;
-		}
-		if(streamingOption.price != null) {
-			output += ` for ${streamingOption.price.formatted}`;
-		}
-		console.log(output);
-	}
-}).catch(error => {
-	console.log(error);
-});
-```
-
-> Checkout [examples](https://github.com/movieofthenight/ts-streaming-availability/tree/main/examples)
-folder for the rest of the examples.
 
 ## Terms & Conditions and Attribution
 
@@ -208,25 +112,6 @@ Once we receive the message we will take a look into the problems and fix the da
 - **I need a client library in another language.**
   - Send us a message via [our contact form](https://www.movieofthenight.com/contact),
   and we will get back to you.
-
-- **I need further details (e.g. posters, summaries, cast) about the shows. What can I do?**
-  - Streaming Availability API works very well with
-  [TMDB API](https://developer.themoviedb.org/docs), which can provide all the other
-  info (that is not related to streaming availability) you need.
-  You can pass the returned `tmdbId` field to the TMDB API's
-  [movie-details](https://developer.themoviedb.org/reference/movie-details)
-  or
-  [tv-series-details](https://developer.themoviedb.org/reference/tv-series-details)
-  endpoints
-  and get the other details of the shows.
-
-- **What is the difference between Streaming Availability API and TMDB API?**
-  - The Movie Database (TMDB) is a community built movie and TV database, similar to IMDb.
-  Their free API provides access to their database which includes posters, summaries, cast,
-  and many other details about the shows. TMDB API's own streaming availability information
-  data does not include deep links or any of the other features of this API such as
-  available subtitles, audios, video qualities etc. Thus Streaming Availability API
-  and TMDB API work hand in hand to get you all the details of the shows.
 
 - **What is RapidAPI?**
   - RapidAPI is the world's largest API marketplace. We use RapidAPI to handle the

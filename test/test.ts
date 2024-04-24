@@ -1,73 +1,39 @@
 import { test } from 'node:test';
 import * as streamingAvailability from "../src/index";
 
-type TestFunction = (client: streamingAvailability.DefaultApi) => Promise<any>
+type TestFunction = (client: streamingAvailability.ShowsApi) => Promise<any>
 
-let testMap = new Map<string, TestFunction>(
-    [
-        ["countries", testCountries],
-        ["genres", testGenres],
-        ["getById", testGetById],
-        ["searchByFilters", testSearchByFilters],
-        ["searchByTitle", testSearchByTitle],
-        ["changes", testChanges],
-        ["leaving", testLeaving],
-    ],
+const testMap = new Map<string, TestFunction>(
+	[
+		["getShow", testGetShow],
+		["searchShows", testSearchShows],
+	],
 )
 
-let rapidApikey =  process.env.RAPID_API_KEY
+const rapidApikey =  process.env.RAPID_API_KEY
 if(!rapidApikey) {
-    throw new Error("Missing RAPID_API_KEY environment variable")
+	throw new Error("Missing RAPID_API_KEY environment variable")
 }
-const client = new streamingAvailability.DefaultApi(new streamingAvailability.Configuration({apiKey: rapidApikey}));
+
+const showsClient = new streamingAvailability.ShowsApi(new streamingAvailability.Configuration({apiKey: rapidApikey}));
 
 testMap.forEach((testFunction, name) => {
-    test(name, () => {
-        return testFunction(client)
-    })
+	test(name, () => {
+		return testFunction(showsClient)
+	})
 })
 
-function testCountries(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.CountriesResponseSchema> {
-    return client.countries()
+function testGetShow(client: streamingAvailability.ShowsApi): Promise<streamingAvailability.Show> {
+	return client.getShow({
+		id: "tt0068646",
+		country: "us",
+	})
 }
 
-function testGenres(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.GenresResponseSchema> {
-    return client.genres()
-}
-
-function testGetById(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.GetResponseSchema> {
-    return client.getById({
-        imdbId: "tt0120338"
-    })
-}
-
-function testSearchByFilters(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.SearchFiltersResponseSchema> {
-    return client.searchByFilters({
-        country: "us",
-        services: "netflix",
-    })
-}
-
-function testSearchByTitle(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.SearchTitleResponseSchema> {
-    return client.searchByTitle({
-        country: "us",
-        title: "batman",
-    })
-}
-
-function testChanges(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.ChangesResponseSchema> {
-    return client.changes({
-        country: "us",
-        services: "netflix",
-        changeType: streamingAvailability.ChangesChangeTypeEnum.Updated,
-        targetType: streamingAvailability.ChangesTargetTypeEnum.Show,
-    })
-}
-
-function testLeaving(client: streamingAvailability.DefaultApi): Promise<streamingAvailability.UpcomingChangesResponseSchema> {
-    return client.leaving({
-        country: "us",
-        services: "netflix",
-        targetType: streamingAvailability.ChangesTargetTypeEnum.Show,
-    })
+function testSearchShows(client: streamingAvailability.ShowsApi): Promise<streamingAvailability.SearchResult> {
+	return client.searchShowsByFilters({
+		catalogs: ["netflix"],
+		country: "us",
+		genres: ["action"],
+	})
 }
