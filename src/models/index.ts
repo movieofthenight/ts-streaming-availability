@@ -11,6 +11,7 @@ export * from './HorizontalImage';
 export * from './ItemType';
 export * from './Locale';
 export * from './ModelError';
+export * from './OrderDirection';
 export * from './Price';
 export * from './SearchResult';
 export * from './Season';

@@ -19,6 +19,7 @@ import type {
   ChangesResult,
   ItemType,
   ModelError,
+  OrderDirection,
   ShowType,
 } from '../models/index';
 import {
@@ -30,6 +31,8 @@ import {
     ItemTypeToJSON,
     ModelErrorFromJSON,
     ModelErrorToJSON,
+    OrderDirectionFromJSON,
+    OrderDirectionToJSON,
     ShowTypeFromJSON,
     ShowTypeToJSON,
 } from '../models/index';
@@ -44,7 +47,7 @@ export interface GetChangesRequest {
     to?: number;
     includeUnknownDates?: boolean;
     cursor?: string;
-    descendingOrder?: boolean;
+    orderDirection?: OrderDirection;
     outputLanguage?: GetChangesOutputLanguageEnum;
 }
 
@@ -117,8 +120,8 @@ export class ChangesApi extends runtime.BaseAPI {
             queryParameters['cursor'] = requestParameters['cursor'];
         }
 
-        if (requestParameters['descendingOrder'] != null) {
-            queryParameters['descending_order'] = requestParameters['descendingOrder'];
+        if (requestParameters['orderDirection'] != null) {
+            queryParameters['order_direction'] = requestParameters['orderDirection'];
         }
 
         if (requestParameters['outputLanguage'] != null) {

@@ -16,6 +16,7 @@
 import * as runtime from '../runtime';
 import type {
   ModelError,
+  OrderDirection,
   SearchResult,
   Show,
   ShowType,
@@ -23,6 +24,8 @@ import type {
 import {
     ModelErrorFromJSON,
     ModelErrorToJSON,
+    OrderDirectionFromJSON,
+    OrderDirectionToJSON,
     SearchResultFromJSON,
     SearchResultToJSON,
     ShowFromJSON,
@@ -53,7 +56,7 @@ export interface SearchShowsByFiltersRequest {
     keyword?: string;
     seriesGranularity?: SearchShowsByFiltersSeriesGranularityEnum;
     orderBy?: SearchShowsByFiltersOrderByEnum;
-    descendingOrder?: boolean;
+    orderDirection?: OrderDirection;
     cursor?: string;
 }
 
@@ -191,8 +194,8 @@ export class ShowsApi extends runtime.BaseAPI {
             queryParameters['order_by'] = requestParameters['orderBy'];
         }
 
-        if (requestParameters['descendingOrder'] != null) {
-            queryParameters['descending_order'] = requestParameters['descendingOrder'];
+        if (requestParameters['orderDirection'] != null) {
+            queryParameters['order_direction'] = requestParameters['orderDirection'];
         }
 
         if (requestParameters['cursor'] != null) {

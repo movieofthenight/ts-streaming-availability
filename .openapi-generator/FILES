@@ -20,6 +20,7 @@ src/models/HorizontalImage.ts
 src/models/ItemType.ts
 src/models/Locale.ts
 src/models/ModelError.ts
+src/models/OrderDirection.ts
 src/models/Price.ts
 src/models/SearchResult.ts
 src/models/Season.ts

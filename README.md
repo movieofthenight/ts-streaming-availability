@@ -3,7 +3,14 @@
 [![npm](https://img.shields.io/npm/v/streaming-availability?style=flat-square&logo=npm&color=blue)](https://www.npmjs.com/package/streaming-availability)
 [![tsdoc](https://img.shields.io/badge/tsdoc-reference-blue?style=flat-square)](https://movieofthenight.github.io/ts-streaming-availability/)
 
-This client can be used in both JavaScript and TypeScript projects; and both in browser and Node environment.
+This client can be used in both JavaScript and TypeScript projects;
+and both in browser and Node environment.
+
+
+Since using this client in browser would expose your API key to the public,
+it is more secure to use it in server-side applications.
+Using it in browser is only recommended for personal projects and
+development purposes.
 
 ## Streaming Availability API
 
@@ -68,7 +75,7 @@ npm i streaming-availability
 ### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.1/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.2/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`

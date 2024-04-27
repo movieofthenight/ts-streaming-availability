@@ -1,0 +1,19 @@
+{
+  "name": "the-godfather",
+  "version": "1.0.0",
+  "description": "Get the streaming availability of The Godfather",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node index.js"
+  },
+  "keywords": [],
+  "author": "Movie of the Night",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "streaming-availability": "^4.0.1"
+  },
+  "type": "module"
+}
