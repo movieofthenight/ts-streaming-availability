@@ -6,7 +6,6 @@
 This client can be used in both JavaScript and TypeScript projects;
 and both in browser and Node environment.
 
-
 Since using this client in browser would expose your API key to the public,
 it is more secure to use it in server-side applications.
 Using it in browser is only recommended for personal projects and
@@ -75,11 +74,109 @@ npm i streaming-availability
 ### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.2/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.3/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
 where you can access to the module.
+
+## Usage
+
+### Node
+
+```ts
+import * as streamingAvailability from "streaming-availability";
+
+const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
+
+const client = new streamingAvailability.Client(new streamingAvailability.Configuration({
+	apiKey: RAPID_API_KEY
+}));
+
+// Start using the client
+```
+
+### Script Tag
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example</title>
+</head>
+<body style="white-space: pre-line">
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.3/bundle.min.js"></script>
+	<script type="module">
+		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
+
+		const client = new streamingAvailability.Client(new streamingAvailability.Configuration({
+			apiKey: RAPID_API_KEY
+		}));
+
+		// Start using the client
+	</script>
+</body>
+</html>
+```
+
+## Examples
+
+### Get The Godfather's Streaming Availability Info
+
+```ts
+import * as streamingAvailability from "streaming-availability";
+
+const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
+
+const client = new streamingAvailability.Client(new streamingAvailability.Configuration({
+	apiKey: RAPID_API_KEY
+}));
+
+let show = await client.showsApi.getShow(
+	{id: "tt0068646", country: "us"}
+);
+
+console.log(show.title);
+console.log(show.overview);
+show.streamingOptions["us"].forEach((streamingOption) => {
+	console.log(streamingOption.link);
+});
+```
+
+#### Via Script Tag
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Godfather</title>
+</head>
+<body style="white-space: pre-line">
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.3/bundle.min.js"></script>
+	<script type="module">
+		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
+
+		const client = new streamingAvailability.Client(new streamingAvailability.Configuration({
+			apiKey: RAPID_API_KEY
+		}));
+
+		let show = await client.showsApi.getShow(
+			{id: "tt0068646", country: "us"}
+		);
+		document.body.textContent = show.title + "\r\n";
+		document.body.textContent += show.overview + "\r\n";
+		show.streamingOptions["us"].forEach((streamingOption) => {
+			document.body.textContent +=  streamingOption.link + "\r\n";
+		});
+	</script>
+</body>
+</html>
+```
+
+> Checkout [examples](https://github.com/movieofthenight/ts-streaming-availability/blob/main/examples)
+folder for the rest of the examples.
 
 ## Terms & Conditions and Attribution
 

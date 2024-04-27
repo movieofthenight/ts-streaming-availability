@@ -1,7 +1,7 @@
 {
-  "name": "the-godfather",
+  "name": "netflix-popular-action-movies",
   "version": "1.0.0",
-  "description": "Get the streaming availability of The Godfather",
+  "description": "Get the most popular action movies on Netflix",
   "main": "index.js",
   "scripts": {
     "start": "tsc && node index.js"
