@@ -31,7 +31,7 @@ export interface Episode {
      * @type {string}
      * @memberof Episode
      */
-    itemType: EpisodeItemTypeEnum;
+    itemType: string;
     /**
      * Title of the episode.
      * @type {string}
@@ -51,16 +51,6 @@ export interface Episode {
      */
     streamingOptions: { [key: string]: Array<StreamingOption>; };
 }
-
-
-/**
- * @export
- */
-export const EpisodeItemTypeEnum = {
-    Episode: 'episode'
-} as const;
-export type EpisodeItemTypeEnum = typeof EpisodeItemTypeEnum[keyof typeof EpisodeItemTypeEnum];
-
 
 /**
  * Check if a given object implements the Episode interface.

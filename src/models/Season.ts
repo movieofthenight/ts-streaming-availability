@@ -37,7 +37,7 @@ export interface Season {
      * @type {string}
      * @memberof Season
      */
-    itemType: SeasonItemTypeEnum;
+    itemType: string;
     /**
      * Title of the season.
      * @type {string}
@@ -69,16 +69,6 @@ export interface Season {
      */
     episodes?: Array<Episode>;
 }
-
-
-/**
- * @export
- */
-export const SeasonItemTypeEnum = {
-    Season: 'season'
-} as const;
-export type SeasonItemTypeEnum = typeof SeasonItemTypeEnum[keyof typeof SeasonItemTypeEnum];
-
 
 /**
  * Check if a given object implements the Season interface.

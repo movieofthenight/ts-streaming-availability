@@ -82,7 +82,7 @@ export interface Show {
      * @type {string}
      * @memberof Show
      */
-    itemType: ShowItemTypeEnum;
+    itemType: string;
     /**
      * Type of the show. Based on the type, some properties might be omitted.
      * @type {ShowType}
@@ -204,16 +204,6 @@ export interface Show {
      */
     seasons?: Array<Season>;
 }
-
-
-/**
- * @export
- */
-export const ShowItemTypeEnum = {
-    Show: 'show'
-} as const;
-export type ShowItemTypeEnum = typeof ShowItemTypeEnum[keyof typeof ShowItemTypeEnum];
-
 
 /**
  * Check if a given object implements the Show interface.
