@@ -125,7 +125,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise items per page is 15. 
+     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise, items per page is 15. 
      * Search Shows by filters
      */
     async searchShowsByFiltersRaw(requestParameters: SearchShowsByFiltersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SearchResult>> {
@@ -219,7 +219,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise items per page is 15. 
+     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise, items per page is 15. 
      * Search Shows by filters
      */
     async searchShowsByFilters(requestParameters: SearchShowsByFiltersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SearchResult> {

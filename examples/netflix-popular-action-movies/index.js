@@ -12,7 +12,7 @@ let searchResult = await client.showsApi.searchShowsByFilters(({
     genres: ["action"],
     showType: streamingAvailability.ShowType.Movie,
     orderBy: "popularity_1year",
-}))
+}));
 
 searchResult.shows.forEach((show) => {
     console.log(show.title);

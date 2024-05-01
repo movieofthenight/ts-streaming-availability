@@ -74,7 +74,7 @@ npm i streaming-availability
 ### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.3/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.1.0/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -106,7 +106,7 @@ const client = new streamingAvailability.Client(new streamingAvailability.Config
 	<title>Example</title>
 </head>
 <body style="white-space: pre-line">
-	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.3/bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.1.0/bundle.min.js"></script>
 	<script type="module">
 		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
 
@@ -154,7 +154,7 @@ show.streamingOptions["us"].forEach((streamingOption) => {
 	<title>The Godfather</title>
 </head>
 <body style="white-space: pre-line">
-	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.0.3/bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.1.0/bundle.min.js"></script>
 	<script type="module">
 		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
 
@@ -177,6 +177,47 @@ show.streamingOptions["us"].forEach((streamingOption) => {
 
 > Checkout [examples](https://github.com/movieofthenight/ts-streaming-availability/blob/main/examples)
 folder for the rest of the examples.
+
+## Auto Pagination
+
+This client supports auto-pagination for the paginated endpoints.
+
+If you'd like to use auto-pagination,
+you can call the corresponding auto pagination
+versions of the functions.
+
+An example call without auto pagination:
+
+```ts
+const searchResult = await client.showsApi.searchShowsByFilters(({
+	country: "us",
+	catalogs: ["netflix"],
+	genres: ["action"],
+	showType: streamingAvailability.ShowType.Movie,
+	orderBy: "popularity_1year",
+}));
+```
+
+An example call with auto pagination
+that fetches at most 3 pages:
+
+```ts
+const shows = client.showsApi.searchShowsByFiltersWithAutoPagination({
+	country: "us",
+	catalogs: ["netflix"],
+	genres: ["action"],
+	showType: streamingAvailability.ShowType.Movie,
+	orderBy: "popularity_1year",
+}, 3)
+```
+
+Then you can iterate over the results in the following way:
+
+```ts
+for await (const show of shows) {
+	// Do something with the show
+}
+```
 
 ## Terms & Conditions and Attribution
 
