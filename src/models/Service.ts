@@ -75,11 +75,11 @@ export interface Service {
      */
     streamingOptionTypes: StreamingOptionTypes;
     /**
-     * Map of the supported addons by their ids.
-     * @type {{ [key: string]: Addon; }}
+     * Array of the supported addons in the service.
+     * @type {Array<Addon>}
      * @memberof Service
      */
-    addons: { [key: string]: Addon; };
+    addons: Array<Addon>;
 }
 
 /**
@@ -112,7 +112,7 @@ export function ServiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): S
         'themeColorCode': json['themeColorCode'],
         'imageSet': ServiceImageSetFromJSON(json['imageSet']),
         'streamingOptionTypes': StreamingOptionTypesFromJSON(json['streamingOptionTypes']),
-        'addons': json['addons'],
+        'addons': ((json['addons'] as Array<any>).map(AddonFromJSON)),
     };
 }
 
@@ -128,7 +128,7 @@ export function ServiceToJSON(value?: Service | null): any {
         'themeColorCode': value['themeColorCode'],
         'imageSet': ServiceImageSetToJSON(value['imageSet']),
         'streamingOptionTypes': StreamingOptionTypesToJSON(value['streamingOptionTypes']),
-        'addons': value['addons'],
+        'addons': ((value['addons'] as Array<any>).map(AddonToJSON)),
     };
 }
 

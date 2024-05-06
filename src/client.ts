@@ -23,7 +23,7 @@ class Page<Type> {
 	nextPageCursor: string;
 }
 
-async function* iterator<Type>(maxPages: number, fetcher: (cursor?: string) => Promise<Page<Type>>): AsyncGenerator<Type> {
+async function* iterator<Type>(maxPages: number, fetcher: (cursor?: string) => Promise<Page<Type>>): AsyncGenerator<Type,void,void> {
 	let currentPage = await fetcher();
 	for(let pageCount = 1; true; pageCount++) {
 		for(const item of currentPage.items) {
@@ -52,7 +52,7 @@ export class ShowsApiExtended extends ShowsApi {
 	 *
 	 * @returns AsyncGenerator of Show
 	 */
-	searchShowsByFiltersWithAutoPagination(requestParameters: SearchShowsByFiltersRequest, maxPages: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): AsyncGenerator<Show> {
+	searchShowsByFiltersWithAutoPagination(requestParameters: SearchShowsByFiltersRequest, maxPages: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): AsyncGenerator<Show,void,void> {
 		return iterator(maxPages, async (cursor?: string): Promise<Page<Show>> => {
 			const pageRequestParameters = {...requestParameters};
 			if (cursor) {
@@ -87,7 +87,7 @@ export class ChangesApiExtended extends ChangesApi {
 	 *
 	 * @returns AsyncGenerator of ChangeWithShow
 	 */
-	getChangesWithAutoPagination(requestParameters: GetChangesRequest, maxPages: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): AsyncGenerator<ChangeWithShow> {
+	getChangesWithAutoPagination(requestParameters: GetChangesRequest, maxPages: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): AsyncGenerator<ChangeWithShow,void,void> {
 		return iterator(maxPages, async (cursor?: string): Promise<Page<ChangeWithShow>> => {
 			const pageRequestParameters = {...requestParameters};
 			if (cursor) {

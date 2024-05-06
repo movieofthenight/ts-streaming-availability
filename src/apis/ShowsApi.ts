@@ -125,7 +125,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise, items per page is 15. 
+     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country. Streaming availability info from the other countries are not included in the response.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise, items per page is 15. 
      * Search Shows by filters
      */
     async searchShowsByFiltersRaw(requestParameters: SearchShowsByFiltersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SearchResult>> {
@@ -219,7 +219,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise, items per page is 15. 
+     * Search through the catalog of the given streaming services in the given country. Provides filters such as show language, genres, keyword and release year. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, release year, deep links to streaming services, available subtitles, audios, available video quality and many more! Apart from the info about the given country-service combinations, output also includes information about streaming availability in the other services for the given country. Streaming availability info from the other countries are not included in the response.  When show_type is movie or series_granularity is show, items per page is 20. When show_type is series and series_granularity is episode items per page is 10. Otherwise, items per page is 15. 
      * Search Shows by filters
      */
     async searchShowsByFilters(requestParameters: SearchShowsByFiltersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SearchResult> {
@@ -228,7 +228,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Search for movies and series by a title. Maximum amount of items returned are 20 unless there are more than 20 shows with the exact given title input. In that case all the items have 100% match with the title will be returned.  No pagination is supported. 
+     * Search for movies and series by a title. Maximum amount of items returned are 20 unless there are more than 20 shows with the exact given title input. In that case all the items have 100% match with the title will be returned.  Streaming availability info for the target country is included in the response, but not for the other countries.  Results might include shows that are not streamable in the target country. Only criteria for the search are the title and the show type.  No pagination is supported. 
      * Search Shows by title
      */
     async searchShowsByTitleRaw(requestParameters: SearchShowsByTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Show>>> {
@@ -285,7 +285,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Search for movies and series by a title. Maximum amount of items returned are 20 unless there are more than 20 shows with the exact given title input. In that case all the items have 100% match with the title will be returned.  No pagination is supported. 
+     * Search for movies and series by a title. Maximum amount of items returned are 20 unless there are more than 20 shows with the exact given title input. In that case all the items have 100% match with the title will be returned.  Streaming availability info for the target country is included in the response, but not for the other countries.  Results might include shows that are not streamable in the target country. Only criteria for the search are the title and the show type.  No pagination is supported. 
      * Search Shows by title
      */
     async searchShowsByTitle(requestParameters: SearchShowsByTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Show>> {

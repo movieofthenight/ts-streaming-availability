@@ -74,7 +74,7 @@ npm i streaming-availability
 ### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.1.0/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.2.0/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -106,7 +106,7 @@ const client = new streamingAvailability.Client(new streamingAvailability.Config
 	<title>Example</title>
 </head>
 <body style="white-space: pre-line">
-	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.1.0/bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.2.0/bundle.min.js"></script>
 	<script type="module">
 		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
 
@@ -121,6 +121,15 @@ const client = new streamingAvailability.Client(new streamingAvailability.Config
 ```
 
 ## Examples
+
+These examples assume that you are running inside
+a module, since it uses
+[top level await](https://github.com/tc39/proposal-top-level-await).
+
+In
+[examples](https://github.com/movieofthenight/ts-streaming-availability/blob/main/examples)
+folder, you can find sample package setups that
+you can take as a reference.
 
 ### Get The Godfather's Streaming Availability Info
 
@@ -154,7 +163,7 @@ show.streamingOptions["us"].forEach((streamingOption) => {
 	<title>The Godfather</title>
 </head>
 <body style="white-space: pre-line">
-	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.1.0/bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.2.0/bundle.min.js"></script>
 	<script type="module">
 		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
 
@@ -175,8 +184,9 @@ show.streamingOptions["us"].forEach((streamingOption) => {
 </html>
 ```
 
-> Checkout [examples](https://github.com/movieofthenight/ts-streaming-availability/blob/main/examples)
-folder for the rest of the examples.
+> Checkout
+> [examples](https://github.com/movieofthenight/ts-streaming-availability/blob/main/examples)
+> folder for the rest of the examples.
 
 ## Auto Pagination
 
