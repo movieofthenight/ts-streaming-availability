@@ -13,7 +13,7 @@ development purposes.
 
 ## Streaming Availability API
 
-Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 59 countries!
+Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 60 countries!
 
 ### API Key
 
@@ -48,6 +48,8 @@ or popularity over different time periods
 (e.g.: get the all-time most popular movies on Netflix US,
 get the most popular series in the last 7 days
 on Amazon Prime and Disney+ in the United Kingdom)
+- Get the list of upcoming & expiring titles
+- Get the daily Top 10 lists
 - Returned streaming availability info includes:
   - Deep links into the streaming services for
 movies, series, seasons and episodes,
@@ -76,7 +78,7 @@ npm i streaming-availability
 ### Via Script Tag from CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.2.0/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.4.0/bundle.min.js"></script>
 ```
 
 This script creates a global variable at `window.streamingAvailability`
@@ -108,7 +110,7 @@ const client = new streamingAvailability.Client(new streamingAvailability.Config
 	<title>Example</title>
 </head>
 <body style="white-space: pre-line">
-	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.2.0/bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.4.0/bundle.min.js"></script>
 	<script type="module">
 		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
 
@@ -165,7 +167,7 @@ show.streamingOptions["us"].forEach((streamingOption) => {
 	<title>The Godfather</title>
 </head>
 <body style="white-space: pre-line">
-	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.2.0/bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/movieofthenight/ts-streaming-availability@v4.4.0/bundle.min.js"></script>
 	<script type="module">
 		const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
 
@@ -250,6 +252,9 @@ If you have any questions or need further assistance, please don't hesitate to r
 
 ## FAQ
 
+- **How often the data is updated?**
+  - The data is updated daily.
+
 - **I run into an issue. How can I get help?**
   - If the issue is related to the API itself, please create a post
 [here](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/discussions),
@@ -277,18 +282,17 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 
 ## Client Libraries
 
-1. [Go](https://github.com/movieofthenight/go-streaming-availability)
-2. [TypeScript/JavaScript](https://github.com/movieofthenight/ts-streaming-availability)
+1. [TypeScript/JavaScript](https://github.com/movieofthenight/ts-streaming-availability)
 
 
 ## Services Supported
 
 | Service Id | Service Name | Supported Countries |
 | ---------- | ------------ | ------------------- |
-| `netflix` | Netflix | 58 Countries |
+| `netflix` | Netflix | 59 Countries |
 | `prime` | Prime Video | 56 Countries |
-| `disney` | Disney+ | 36 Countries |
-| `hbo` | HBO Max | 24 Countries |
+| `disney` | Disney+ | 46 Countries |
+| `hbo` | Max | 28 Countries |
 | `hulu` | Hulu | United States |
 | `peacock` | Peacock | United States |
 | `paramount` | Paramount+ | 18 Countries |
@@ -305,6 +309,12 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 | `zee5` | Zee5 | 58 Countries |
 | `curiosity` | Curiosity Stream | 57 Countries |
 | `wow` | Wow | Germany |
+| `discovery` | Discovery+ | United States, Canada, Ireland, Italy, United Kingdom, Germany, Austria |
+| `sonyliv` | SonyLiv | India |
+| `itvx` | ITVX | United Kingdom |
+| `plutotv` | Pluto TV | 25 Countries |
+| `tubi` | Tubi | Australia, Canada, New Zealand, Ecuador, Mexico, Panama, United States |
+| `blutv` | BluTV | Turkey, Germany, Azerbaijan |
 
 
 ## Countries Supported
@@ -364,6 +374,7 @@ RapidAPI and start using the Streaming Availability API through RapidAPI right a
 | `se` | Sweden |
 | `sg` | Singapore |
 | `si` | Slovenia |
+| `sk` | Slovakia |
 | `th` | Thailand |
 | `tr` | Turkey |
 | `ua` | Ukraine |
