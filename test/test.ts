@@ -10,12 +10,12 @@ const testMap = new Map<string, TestFunction>(
 	],
 )
 
-const rapidApikey =  process.env.RAPID_API_KEY;
-if(!rapidApikey) {
-	throw new Error("Missing RAPID_API_KEY environment variable")
+const apiKey =  process.env.API_KEY;
+if(!apiKey) {
+	throw new Error("Missing API_KEY environment variable")
 }
 
-const client = new streamingAvailability.Client(new streamingAvailability.Configuration({apiKey: rapidApikey}));
+const client = new streamingAvailability.Client(new streamingAvailability.Configuration({apiKey: apiKey}));
 
 testMap.forEach((testFunction, name) => {
 	test(name, () => {

@@ -13,7 +13,7 @@
  */
 
 
-export const BASE_PATH = "https://streaming-availability.p.rapidapi.com".replace(/\/+$/, "");
+export const BASE_PATH = "https://api.movieofthenight.com/v4".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
     basePath?: string; // override base path

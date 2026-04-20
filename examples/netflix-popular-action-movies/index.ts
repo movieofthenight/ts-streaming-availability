@@ -1,9 +1,9 @@
 import * as streamingAvailability from "streaming-availability";
 
-const RAPID_API_KEY = "<YOUR_RAPID_API_KEY>";
+const API_KEY = "<YOUR_API_KEY>";
 
 const client = new streamingAvailability.Client(new streamingAvailability.Configuration({
-	apiKey: RAPID_API_KEY
+	apiKey: API_KEY
 }));
 
 let searchResult = await client.showsApi.searchShowsByFilters(({

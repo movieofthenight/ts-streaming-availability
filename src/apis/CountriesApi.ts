@@ -53,7 +53,11 @@ export class CountriesApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["X-RapidAPI-Key"] = await this.configuration.apiKey("X-RapidAPI-Key"); // X-Rapid-API-Key authentication
+            headerParameters["X-API-Key"] = await this.configuration.apiKey("X-API-Key"); // X-API-Key authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["X-RapidAPI-Key"] = await this.configuration.apiKey("X-RapidAPI-Key"); // X-RapidAPI-Key authentication
         }
 
         const response = await this.request({
@@ -96,7 +100,11 @@ export class CountriesApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["X-RapidAPI-Key"] = await this.configuration.apiKey("X-RapidAPI-Key"); // X-Rapid-API-Key authentication
+            headerParameters["X-API-Key"] = await this.configuration.apiKey("X-API-Key"); // X-API-Key authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["X-RapidAPI-Key"] = await this.configuration.apiKey("X-RapidAPI-Key"); // X-RapidAPI-Key authentication
         }
 
         const response = await this.request({

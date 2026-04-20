@@ -10,10 +10,35 @@ export class Client {
 	public changesApi: ChangesApiExtended;
 
 	constructor(configuration: Configuration) {
-		this.showsApi = new ShowsApiExtended(configuration);
-		this.genresApi = new GenresApi(configuration);
-		this.countriesApi = new CountriesApi(configuration);
-		this.changesApi = new ChangesApiExtended(configuration);
+		const apiKey = configuration.apiKey("X-API-Key") as string;
+		let basePath: string;
+		let apiKeyHeaderName: string;
+		if (apiKey.startsWith("motn-key-")) {
+			basePath = "https://api.movieofthenight.com/v4";
+			apiKeyHeaderName = "X-API-Key";
+		} else {
+			basePath = "https://streaming-availability.p.rapidapi.com"
+			apiKeyHeaderName = "X-RapidAPI-Key";
+		}
+
+		const actualConfiguration = new Configuration({
+			apiKey: (name: string) => {
+				if (apiKeyHeaderName === name) {
+					return configuration.apiKey(name);
+				} else {
+					return undefined;
+				}
+			},
+			basePath: basePath,
+			fetchApi: configuration.fetchApi,
+			queryParamsStringify: configuration.queryParamsStringify,
+			headers: configuration.headers,
+		});
+
+		this.showsApi = new ShowsApiExtended(actualConfiguration);
+		this.genresApi = new GenresApi(actualConfiguration);
+		this.countriesApi = new CountriesApi(actualConfiguration);
+		this.changesApi = new ChangesApiExtended(actualConfiguration);
 	}
 }
 

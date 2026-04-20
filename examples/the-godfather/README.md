@@ -5,7 +5,7 @@ This example shows how to get the streaming availability data of
 
 ## How to Run
 
-Update `RAPID_API_KEY` constant with your own API key. Then:
+Update `API_KEY` constant with your own API key. Then:
 
 ```shell
  npm install
