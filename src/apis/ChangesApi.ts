@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Streaming Availability API
- * Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 60 countries!
+ * Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 66 countries!
  *
  * The version of the OpenAPI document: 4.1.0
  * 
@@ -57,7 +57,7 @@ export interface GetChangesRequest {
 export class ChangesApi extends runtime.BaseAPI {
 
     /**
-     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is 25.  Changes are listed under changes field, and shows affected by these changes are listed under shows field.  Note that upcoming changes are only supported for Apple TV, Disney+, Max, Netflix and Prime Video. For other services, upcoming changes will return an empty list. 
+     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is 25.  Changes are listed under changes field, and shows affected by these changes are listed under shows field.  Note that upcoming changes are only supported for Apple TV, Disney+, Max, Netflix, Prime Video, and Mubi. For other services, upcoming changes will return an empty list. 
      * Get Changes
      */
     async getChangesRaw(requestParameters: GetChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ChangesResult>> {
@@ -149,7 +149,7 @@ export class ChangesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is 25.  Changes are listed under changes field, and shows affected by these changes are listed under shows field.  Note that upcoming changes are only supported for Apple TV, Disney+, Max, Netflix and Prime Video. For other services, upcoming changes will return an empty list. 
+     * Query the new, removed, updated, expiring or upcoming movies/series/seasons/episodes in a given list of streaming services. Results are ordered by the date of the changes. Changes listed per page is 25.  Changes are listed under changes field, and shows affected by these changes are listed under shows field.  Note that upcoming changes are only supported for Apple TV, Disney+, Max, Netflix, Prime Video, and Mubi. For other services, upcoming changes will return an empty list. 
      * Get Changes
      */
     async getChanges(requestParameters: GetChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ChangesResult> {

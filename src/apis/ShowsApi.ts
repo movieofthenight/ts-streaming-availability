@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Streaming Availability API
- * Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 60 countries!
+ * Streaming Availability API allows getting streaming availability information of movies and series; and querying the list of available shows on streaming services such as Netflix, Disney+, Apple TV, Max and Hulu across 66 countries!
  *
  * The version of the OpenAPI document: 4.1.0
  * 
@@ -136,7 +136,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get the official top shows in a service. Top shows are determined by the streaming service itself.  Supported streaming services are: - Netflix: netflix - Amazon Prime Video: prime - Disney+: disney - Apple TV: apple - Max: hbo  For unsupported services, this endpoint will return an empty list.  Series granularity is always show for this endpoint, meaning that the output will not include season and episode info. 
+     * Get the official top shows in a service. Top shows are determined by the streaming service itself.  Supported streaming services are: - Netflix: netflix - Amazon Prime Video: prime - Disney+: disney - Apple TV: apple - Max: hbo - Crunchyroll crunchyroll  For unsupported services, this endpoint will return an empty list.  Series granularity is always show for this endpoint, meaning that the output will not include season and episode info. 
      * Get Top Shows
      */
     async getTopShowsRaw(requestParameters: GetTopShowsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Show>>> {
@@ -193,7 +193,7 @@ export class ShowsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get the official top shows in a service. Top shows are determined by the streaming service itself.  Supported streaming services are: - Netflix: netflix - Amazon Prime Video: prime - Disney+: disney - Apple TV: apple - Max: hbo  For unsupported services, this endpoint will return an empty list.  Series granularity is always show for this endpoint, meaning that the output will not include season and episode info. 
+     * Get the official top shows in a service. Top shows are determined by the streaming service itself.  Supported streaming services are: - Netflix: netflix - Amazon Prime Video: prime - Disney+: disney - Apple TV: apple - Max: hbo - Crunchyroll crunchyroll  For unsupported services, this endpoint will return an empty list.  Series granularity is always show for this endpoint, meaning that the output will not include season and episode info. 
      * Get Top Shows
      */
     async getTopShows(requestParameters: GetTopShowsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Show>> {
